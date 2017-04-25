@@ -1,0 +1,48 @@
+<div class="app app-default">
+	<app-dashboard-sidebar></app-dashboard-sidebar>
+	<div class="app-container">
+		<app-dashboard-header></app-dashboard-header>
+		<div class="row">
+		  <div class="col-md-12">
+		    <div class="card history-table">
+		      <div class="card-header">
+		        <div class="card-title">Plan Purchased</div>
+		      </div>
+		      <div class="card-body">
+		          <div class="row">
+		            <div class="col-md-12">
+		              <table class="table">
+		                <thead>
+		                  <tr>
+		                    <th>Purchase Date</th>
+		                    <th>Plan Name</th>
+		                    <th>Financial Year</th>
+		                    <th>Status</th>
+		                  </tr>
+		                </thead>
+		                <tbody>
+		                  <tr>
+		                    <th scope="row">12-09-2016</th>
+		                    <td>Basic @ 449 Rs.</td>
+		                    <td>2015-2016</td>
+		                    <td><button type="button" class="btn btn-default" [routerLink]="['/dashboard/history/upgrade-plan']">Upgrade Plan</button>
+		                        <button type="button" class="btn btn-danger"  [routerLink]="['/dashboard/history/cancel-plan']">Cancel Plan</button>
+		                    </td>
+		                  </tr>
+		                  <tr>
+		                    <th scope="row">12-09-2016</th>
+		                    <td>Basic @ 449 Rs.</td>
+		                    <td>2015-2016</td>
+		                    <td>Return filed </td>
+		                  </tr>
+		                  
+		                </tbody>
+		              </table>
+		            </div>
+		          </div>
+		        </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</div>

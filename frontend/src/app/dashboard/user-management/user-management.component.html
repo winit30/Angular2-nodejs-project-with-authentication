@@ -1,0 +1,40 @@
+<div class="app app-default">
+<app-dashboard-sidebar></app-dashboard-sidebar>
+	<div class="app-container">
+		<app-dashboard-header></app-dashboard-header>
+		
+
+
+		<div class="row pan-number">
+		  <div class="col-lg-12">
+		  <div class="card">
+		  		<div class="card-header">User Management</div>
+		  		<div class="card-body">
+		  			<table class="table">
+		  		<thead>
+		  			<tr>
+		  				<th>Username</th>
+		  				<th>Email</th>
+		  			</tr>
+		  		</thead>
+		  		<tbody>
+		  			<tr *ngFor="let user of userData;  let i = index"  [attr.data-index]="i" (click)="userDetails(i)">
+		  				<td>{{user.useremail}}</td>
+		  				<td>{{user.username}}</td>
+		  			</tr>
+		  		</tbody>
+		  	</table>
+		  		</div>
+		  </div>
+		  	
+		  </div>
+		</div>
+		
+		<div class="row pan-number" [hidden]="hideAddButton" >
+		  	<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+				<button type="button" class="btn btn-primary" [routerLink]="['/dashboard/user-management/add-user']">Add User</button>
+		  	</div>
+		</div>
+	
+	</div>
+</div>

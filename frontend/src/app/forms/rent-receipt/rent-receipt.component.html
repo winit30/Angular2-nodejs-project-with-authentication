@@ -1,0 +1,185 @@
+<header class="header frontpage notfront">
+	<app-landing-header></app-landing-header>
+</header>
+
+<div class="app-container full-width">
+<div class="row"  [hidden]="getDownload">
+	<div class="col-lg-8 col-sm-8">
+		<div class="card personal_info">
+			<div class="card-header">
+				Generate Rent Receipt
+			</div>
+			<div class="card-body">
+				<form class="form form-horizontal" name="form"  novalidate (ngSubmit)="generatePdf()" #rentForm="ngForm">
+				
+					<div class="section">
+						<div class="section-body">
+                <div class="form-group" >
+                    <label for="life" class="control-label col-md-3">Name</label>
+                    <div class="input_field col-md-9">
+                      <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="model.name" required />
+                      <div *ngIf="name.errors && (name.dirty || name.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!name.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                    </div>
+                </div>
+               
+								<div class="form-group">
+									<label for="fname" class="control-label col-md-3">Employee ID</label>
+									<div class="input_field col-md-9">
+										  <input type="text" class="form-control" name="employee" #employee="ngModel" [(ngModel)]="model.employee" required />
+										  <div *ngIf="employee.errors && (employee.dirty || employee.touched)"
+									             class="alert alert-danger">
+									            <div [hidden]="!employee.errors.required">
+									              	Required
+									            </div>   
+									        </div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="mname" class="control-label col-md-3">Address(Rented Permises)</label>
+									<div class="input_field col-md-9">
+										 <input type="text" class="form-control" name="address" #address="ngModel" [(ngModel)]="model.address" required />
+										 <div *ngIf="address.errors && (address.dirty || address.touched)"
+									             class="alert alert-danger">
+									            <div [hidden]="!address.errors.required">
+									              	Required
+									            </div>   
+									        </div>
+									</div>
+								</div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">Landlord's Name</label>
+                  <div class="input_field col-md-9">
+                      <input type="text" class="form-control" name="lname" #lname="ngModel"[(ngModel)]="model.lname" required />
+                      <div *ngIf="lname.errors && (lname.dirty || lname.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!lname.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">Landlord's PAN</label>
+                  <div class="input_field col-md-9">
+                    <input type="text" class="form-control" name="lpan" #lpan="ngModel" [(ngModel)]="model.lpan" required maxlength= "10" pattern="[A-Z]{5}\d{4}[A-Z]{1}" />
+                     <div *ngIf="lpan.errors && (lpan.dirty || lpan.touched)"
+                                  class="alert alert-danger">
+                                        <div [hidden]="!lpan.errors.required">
+                                          Required
+                                        </div> 
+                                        <div [hidden]="!lpan.errors.pattern">
+                                          PAN is Invalid
+                                        </div> 
+                                  
+                                  </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">Monthly Rent</label>
+                  <div class="input_field col-md-9">
+                    <input type="text" class="form-control" name="rent" #rent="ngModel" [(ngModel)]="model.rent" required />
+                    <div *ngIf="rent.errors && (rent.dirty || rent.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!rent.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">Period From</label>
+                  <div class="input_field col-md-9">
+                    <input type="date" class="form-control" name="pfrom" #pfrom="ngModel" [(ngModel)]="model.pfrom" required />
+                    <div *ngIf="pfrom.errors && (pfrom.dirty || pfrom.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!pfrom.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">Period To</label>
+                  <div class="input_field col-md-9">
+                    <input type="date" class="form-control" name="pto" #pto="ngModel" [(ngModel)]="model.pto" required />
+                     <div *ngIf="pto.errors && (pto.dirty || pto.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!pto.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">E-mail Address</label>
+                  <div class="input_field col-md-9">
+                     <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="model.email" required  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                      <div *ngIf="email.errors && (email.dirty || email.touched)"
+				             class="alert alert-danger">
+			            <div [hidden]="!email.errors.required">
+			              	Required
+			            </div>   
+			            <div  [hidden]="!email.errors.pattern">
+                            Invalid Email
+                        </div>
+			        </div>
+                  </div>
+                </div>
+
+						</div>
+					</div>
+					<div class="form-footer">
+						<div class="form-group">
+						  <div class="col-md-9 col-md-offset-3">
+							<button type="submit" class="btn btn-primary" [disabled]="!rentForm.form.valid">Generate PDF</button>
+							<button type="button" class="btn btn-default" [routerLink]="['/']">Cancel</button>
+						  </div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+   <div class="col-lg-4 col-sm-4">
+    <div class="card">
+        <div class="card-header">
+          <div class="card-title">Know More About Rent Receipt?</div>
+        </div>
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="row" [hidden]="!getDownload">
+	<div class="col-lg-12">
+		<div class="static-modal">
+			<div class="modal" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-body">
+					 <a [href]="res.filepath" class="btn btn-primary">Download PDF</a>   
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" [routerLink]="['/']">Back</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+</div>
+</div>

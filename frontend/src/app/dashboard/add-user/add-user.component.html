@@ -1,0 +1,98 @@
+<div class="app app-default">
+	<app-dashboard-sidebar></app-dashboard-sidebar>
+	<div class="app-container">
+	<app-dashboard-header></app-dashboard-header>
+	<div class="row">
+		<div class="col-lg-8 col-sm-8">
+			<div class="card personal_info">
+				<div class="card-header">
+					USER Management Detail
+				</div>
+				<div class="card-body">
+					<form class="form form-horizontal" name="form" (ngSubmit)="createUser()" #userForm="ngForm" novalidate>
+						
+							<div class="section">
+								<div class="section-body">
+
+						<div class="form-group">
+						  <label for="username" class="control-label col-md-3">User  Name</label>
+						  <div class="input_field col-md-9">
+							  <input type="text" class="form-control" id="username" name="username" #username="ngModel" [(ngModel)]="model.username" required/>
+							   <div *ngIf="username.errors && (username.dirty || username.touched)"
+								class="alert alert-danger">
+								<div [hidden]="!username.errors.required">
+									Required
+								</div> 
+							  </div>
+						  </div>
+						</div>
+
+						
+
+						<div class="form-group">
+						  <label for="useremail" class="control-label col-md-3">Email  Address</label>
+						  <div class="input_field col-md-9">
+							  <input type="email" class="form-control" id="useremail" name="useremail" #useremail="ngModel" [(ngModel)]="model.useremail" required   pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+							   <div *ngIf="useremail.errors && (useremail.dirty || useremail.touched)"
+								class="alert alert-danger">
+								<div [hidden]="!useremail.errors.required">
+									Required
+								</div> 
+								<div [hidden]="!useremail.errors.pattern">
+									Email is invalid
+								</div> 
+								
+							  </div>
+						  </div>
+						</div>
+
+						<div class="form-group">
+						  <label for="usertype" class="control-label col-md-3">User Type</label>
+						  <div class="input_field col-md-9">
+							  <select class="form-control" name="usertype"  #usertype="ngModel" [(ngModel)]="model.usertype" required>
+						  <option>SAdmin</option>
+						  <option>Admin</option>
+						  <option>Team Lead</option>
+						  <option>Tax Expert</option>
+					</select>
+							 <div *ngIf="usertype.errors && (usertype.dirty || usertype.touched)"
+								class="alert alert-danger">
+								<div [hidden]="!usertype.errors.required">
+									Required
+								</div>   
+							</div>
+						  </div>
+						</div>
+
+						<div class="form-group">
+						  <label for="username" class="control-label col-md-3">Password</label>
+						  <div class="input_field col-md-9">
+							  <input type="text" class="form-control" id="password" name="password" #password="ngModel" [(ngModel)]="model.password" required/>
+							   <div *ngIf="password.errors && (password.dirty || password.touched)"
+								class="alert alert-danger">
+								<div [hidden]="!password.errors.required">
+									Required
+								</div> 
+							  </div>
+						  </div>
+						</div>
+
+
+								</div>
+							</div>
+							<div class="form-footer">
+								<div class="form-group">
+								  <div class="col-md-9 col-md-offset-3">
+										<button type="submit" class="btn btn-primary" [disabled]="!userForm.form.valid">Create user</button>
+									   <button type="button" class="btn btn-default">Cancel</button>
+								  </div>
+								</div>
+							</div>
+						</form>
+				</div>
+			</div>
+		</div>
+	  
+	</div>
+	</div>
+<div>

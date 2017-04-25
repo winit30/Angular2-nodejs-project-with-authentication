@@ -1,0 +1,56 @@
+
+<div class="app-container full-width">
+	<div class="row">
+		<div class="static-modal">
+			<div class="modal" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h4 class="modal-title">Tax Information Network of income tax Department</h4>
+			      </div>
+			      <div class="modal-body no-padding">
+					    <div class="table-responsive">
+						  <table class="table card-table">
+						    <tbody>
+						      <tr>
+						        <td>Permanent Account Number</td>
+						        <td>{{data.storage.pan}}</td>
+						      </tr>
+						      <tr>
+						        <td>Assessment Year</td>
+						        <td>{{data.storage.ass_yr }}</td>
+						      </tr>
+						      <tr>
+						        <td>Mode of Payment</td>
+						        <td>{{mode}}</td>
+						      </tr>
+						      <tr>
+						        <td>Reference Number</td>
+						        <td>{{ref_no}}</td>
+						      </tr>
+						      <tr>
+						        <td>Status</td>
+						        <td>{{status}}</td>
+						      </tr>
+						      <tr>
+						        <td>Date</td>
+						        <td>{{date}}</td>
+						      </tr>
+						      <tr>
+						        <td>Speed Post Ref.No</td>
+						        <td>{{speed_post}}</td>
+						      </tr>
+						    </tbody>
+						  </table>
+						</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" [routerLink]="['/']">Back</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+</div>
+

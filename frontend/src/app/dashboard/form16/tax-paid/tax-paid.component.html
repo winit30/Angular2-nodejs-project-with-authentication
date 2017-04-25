@@ -1,0 +1,286 @@
+<h2><a href="javascript:;">Taxes Paid</a></h2>
+<div class="tab_cont">
+	<ul>
+		<li>
+			<h3>TDS</h3>
+			<div class="inner_tab_cont">
+				<div class="show-hide-tabs" [hidden]="!istdsEntryActive || !isImmovableActive">
+					<fieldset>
+						<h1 class="col-lg-12">Summary of Taxes deducted at Source (TDS)</h1>
+						<p class="col-lg-12 form-para">Specify TDS which was deducted between the period of April 1, 2015 to March 31, 2016.</p>
+						<p class="col-lg-12 form-para">Tax deductions from your Salary by your employer should NOT be entered here.</p>
+
+						<hr/>
+
+						<div class="form-group col-md-6">
+						<div class="input_field">
+							<h5>Non Salary TDS</h5><br/>
+							<button class="btn btn-info" (click)="tdsEntryActive()">+ Add Non-Salary TDS Entry</button><br/>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<div class="input_field">
+							<h5>TDS on Sale of Immovable Property</h5><br/>
+							<button class="btn btn-info" (click)="immovableActive()">+ Add TDS on Sale of Immovable Property</button><br/>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+					<div class="show-hide-tabs" [hidden]="istdsEntryActive">
+						<h4>Add a TDS entry(Tax Deducted at Source)</h4>
+							<form novalidate (ngSubmit)="permanentInfo()" #permanentInfoForm="ngForm">
+								<fieldset>
+									<legend>Tax Deducted At Source</legend>
+									<p>&nbsp;&nbsp;&nbsp; Provide this information from TDS certificate provided by deductor</p>
+									<br/>
+									<div class="form-group col-lg-8">
+										<label for="todeducter">TAN of Deductor</label>
+										<div class="input_field">
+											<input type="text" class="form-control" id="taxofdeductor" name="taxofdeductor" #taxofdeductor="ngModel"  [(ngModel)]="model.taxofdeductor" required>
+											 <div *ngIf="taxofdeductor.errors && (taxofdeductor.dirty || taxofdeductor.touched)"
+										             class="alert alert-danger">
+										            <div [hidden]="!taxofdeductor.errors.required">
+										              	Required
+										            </div>   
+										        </div>
+										</div>
+									</div>
+									<div class="form-group col-lg-8">
+										<label for="nodeductor">Name of Deductor</label>
+										<div class="input_field">
+											<input type="text" class="form-control" id="nameofdeductor" name="nameofdeductor" #nameofdeductor="ngModel"  [(ngModel)]="model.nameofdeductor" required>
+											<div *ngIf="nameofdeductor.errors && (nameofdeductor.dirty || nameofdeductor.touched)"
+										             class="alert alert-danger">
+										            <div [hidden]="!nameofdeductor.errors.required">
+										              	Required
+										            </div>   
+										        </div>
+										</div>
+									</div>
+									<div class="form-group col-lg-8">
+										<label for="tcnumber">TDS Certificate Number</label>
+										<p>This field is optional. Leave blank if you do not know the TDS Certificate Number.</p>
+										<div class="input_field">
+											<input type="text" class="form-control" id="tdscertificatenumber" name="tdscertificatenumber" #tdscertificatenumber="ngModel"  [(ngModel)]="model.tdscertificatenumber" required> 
+											<div *ngIf="tdscertificatenumber.errors && (tdscertificatenumber.dirty || tdscertificatenumber.touched)"
+										             class="alert alert-danger"> 
+										        </div>
+										</div>
+									</div>
+									<div class="form-group col-lg-8">
+										<label for="ttdeducted">Total Tax Deducted</label>
+										<div class="input_field">
+											<input type="text" class="form-control" id="totaltaxdeducted" name="totaltaxdeducted" #totaltaxdeducted="ngModel"  [(ngModel)]="model.totaltaxdeducted" required> 
+											<div *ngIf="totaltaxdeducted.errors && (totaltaxdeducted.dirty || totaltaxdeducted.touched)"
+										             class="alert alert-danger">
+										            <div [hidden]="!totaltaxdeducted.errors.required">
+										              	Required
+										            </div>   
+										        </div>
+										</div>
+									</div>
+									<div class="form-group col-lg-8">
+										<label for="tdcftyear">Tax Deducted claimed for this year</label>
+										<p>Usually this amount is same as Total Tax Deducted.</p>
+										<div class="input_field">
+											<input type="text" class="form-control" id="taxdeductedclaimedforthisyear" name="taxdeductedclaimedforthisyear" #taxdeductedclaimedforthisyear="ngModel"  [(ngModel)]="model.taxdeductedclaimedforthisyear" required>
+											<div *ngIf="taxdeductedclaimedforthisyear.errors && (taxdeductedclaimedforthisyear.dirty || taxdeductedclaimedforthisyear.touched)"
+										             class="alert alert-danger">
+										            <div [hidden]="!taxdeductedclaimedforthisyear.errors.required">
+										              	Required
+										            </div>   
+										     </div>
+										</div>
+									</div>
+									<div class="form-group col-lg-8">
+										<label for="Fdeducted">Financial Year in which TDS was deducted</label>
+										<p>Usually this is the same as the Financial Year of the return (2015-2016). .</p>
+										<div class="input_field">
+											<select class="form-control" name="financialyeartdsdeducted" #financialyeartdsdeducted="ngModel"  [(ngModel)]="model.financialyeartdsdeducted" required>
+											  <option>2015-2016</option>
+											  <option>2014-2015</option>
+											</select>
+											<div *ngIf="financialyeartdsdeducted.errors && (financialyeartdsdeducted.dirty || financialyeartdsdeducted.touched)"
+										             class="alert alert-danger">
+										            <div [hidden]="!financialyeartdsdeducted.errors.required">
+										              	Required
+										            </div>   
+										     </div>
+										</div>
+									</div>
+									<div class="form-group col-lg-12">
+										<button type="submit" class="btn btn-primary" [disabled]="!permanentInfoForm.form.valid">Save</button>
+									</div>
+								</fieldset>
+							</form>	
+					</div>
+
+					<div class="show-hide-tabs"  [hidden]="isImmovableActive">
+							<h4>Add a TDS entry (Tax Deducted at Source) for Sale of Immovable Property (1% TDS)</h4>
+						<form novalidate (ngSubmit)="permanentInfo()" #permanentInfoForm="ngForm">
+							<fieldset>
+									<legend>Tax Deducted At Source for Sale of Immovable Property</legend>
+							<p>&nbsp;&nbsp;&nbsp; Provide this information from TDS certificate provided by the property buyer</p>
+								<br/>
+						<div class="form-group col-lg-8">
+										<label for="popbuyer">PAN of Property Buyer</label>
+										<div class="input_field">
+										<input type="text" class="form-control" id="panofpropertybuyer" name="panofpropertybuyer" #panofpropertybuyer="ngModel"  [(ngModel)]="model.panofpropertybuyer" required>
+									<div *ngIf="panofpropertybuyer.errors && (panofpropertybuyer.dirty || panofpropertybuyer.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!panofpropertybuyer.errors.required">
+							              	Required
+							            </div>   
+							        </div>
+							</div>
+						</div>
+						<div class="form-group col-lg-8">
+							<label for="notpbuyer">Name of the Property Buyer</label>
+							<div class="input_field">
+								<input type="text" class="form-control" id="nameofthepropertybuyer" name="nameofthepropertybuyer" #nameofthepropertybuyer="ngModel"  [(ngModel)]="model.nameofthepropertybuyer" required>
+								<div *ngIf="nameofthepropertybuyer.errors && (nameofthepropertybuyer.dirty || nameofthepropertybuyer.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!nameofthepropertybuyer.errors.required">
+							              	Required
+							            </div>   
+							        </div>
+							</div>
+						</div>
+						<div class="form-group col-lg-8">
+							<label for="Totdeducted">Total Tax Deducted</label>
+							<div class="input_field">
+								<input type="text" class="form-control" id="totaltaxdeducted1" name="totaltaxdeducted1" #totaltaxdeducted1="ngModel"  [(ngModel)]="model.totaltaxdeducted1" required> 
+								<div *ngIf="totaltaxdeducted1.errors && (totaltaxdeducted1.dirty || totaltaxdeducted1.touched)"
+							             class="alert alert-danger"> 
+							        </div>
+							</div>
+						</div>
+						<div class="form-group col-lg-8">
+							<label for="tdcftyear">Tax Deducted claimed for this year</label>
+							<p>Usually this amount is same as Total Tax Deducted.</p>
+							<div class="input_field">
+								<input type="text" class="form-control" id="taxdeductedclaimedforthisyear1" name="taxdeductedclaimedforthisyear1" #taxdeductedclaimedforthisyear1="ngModel"  [(ngModel)]="model.taxdeductedclaimedforthisyear1" required>
+								<div *ngIf="taxdeductedclaimedforthisyear1.errors && (taxdeductedclaimedforthisyear1.dirty || taxdeductedclaimedforthisyear1.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!taxdeductedclaimedforthisyear1.errors.required">
+							              	Required
+							            </div>   
+							     </div>
+							</div>
+						</div>
+						<div class="form-group col-lg-8">
+							<label for="Fdeducted">Financial Year in which TDS was deducted</label>
+							<p>Usually this is the same as the Financial Year of the return (2015-2016).</p>
+							<div class="input_field">
+								<select class="form-control" name="financialyearinwhichtdswasdeducted1" #financialyearinwhichtdswasdeducted1="ngModel"  [(ngModel)]="model.financialyearinwhichtdswasdeducted1" required>
+								  <option>2015-2016</option>
+								  <option>2014-2015</option>
+								</select>
+								<div *ngIf="financialyearinwhichtdswasdeducted1.errors && (financialyearinwhichtdswasdeducted1.dirty || financialyearinwhichtdswasdeducted1.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!financialyearinwhichtdswasdeducted1.errors.required">
+							              	Required
+							            </div>   
+							     </div>
+							</div>
+						</div>
+						<div class="form-group col-lg-12">
+							<button type="submit" class="btn btn-primary" [disabled]="!permanentInfoForm.form.valid">Save</button>
+						</div>
+					</fieldset>
+				</form>	
+				</div>
+			</div>
+
+
+
+
+
+			
+
+	
+			<div class="inner_tab_cont">
+			<h4>Summary of Taxes Paid: Advance Tax and Self Assessment Tax</h4>
+		<form novalidate (ngSubmit)="summaryoftaxes()" #summaryoftaxesForm="ngForm">
+			<fieldset>
+					<legend>Add an Advance Tax or Self Assessment Tax entry</legend>
+			<p>&nbsp;&nbsp;&nbsp; Provide details about any Advance Tax or Self Assessment Tax paid</p>
+				<br/>
+		<div class="form-group col-lg-8">
+						<label for="amountpaid">Amount Paid</label>
+						<div class="input_field">
+						<input type="text" class="form-control" id="amountpaid" name="amountpaid" #amountpaid="ngModel"  [(ngModel)]="model.amountpaid" required>
+					<div *ngIf="amountpaid.errors && (amountpaid.dirty || amountpaid.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!amountpaid.errors.required">
+			              	Required
+			            </div>   
+			        </div>
+			</div>
+		</div>
+		
+		<div class="form-group col-lg-8">
+			<label for="dateofpayment">Date of Payment</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="dateofpayment" placeholder="dd/mm/yy"  name="dateofpayment" #dateofpayment="ngModel"  [(ngModel)]="model.dateofpayment" required>
+				<div *ngIf="dateofpayment.errors && (dateofpayment.dirty || dateofpayment.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!dateofpayment.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-8">
+			<label for="bsrcode">BSR Code of the bank you deposited with </label>
+		
+			<div class="input_field">
+				<input type="text" class="form-control" id="bsrcode" name="bsrcode" #bsrcode="ngModel"  [(ngModel)]="model.bsrcode" required>
+				<div *ngIf="bsrcode.errors && (bsrcode.dirty || bsrcode.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!bsrcode.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-8">
+			<label for="challanno">Challan number</label>
+			
+			<div class="input_field">
+				<input type="text" class="form-control" id="challanno" name="challanno" #challanno="ngModel"  [(ngModel)]="model.challanno" required>
+				<div *ngIf="challanno.errors && (challanno.dirty || challanno.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!challanno.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			  </div>
+		  </div>
+		   <div class="form-group col-lg-12">
+			<button type="submit" class="btn btn-primary" [disabled]="!permanentInfoForm.form.valid">Save</button>
+		   </div>
+	  </fieldset>
+</form>	
+</div>
+
+
+
+
+
+		</li>
+		<li>
+			
+		</li>
+	</ul>
+
+	<div class="clearfix"></div>
+	<div class="form-group col-lg-4">
+		<button type="button" class="btn green-btn back-sec">Back</button>
+	</div>
+	<div class="form-group col-lg-4 pull-right">
+		<button type="button" class="btn green-btn pull-right next-sec">Next</button>
+	</div>
+	<div class="clearfix"></div>
+</div>

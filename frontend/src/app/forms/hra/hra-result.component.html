@@ -1,0 +1,41 @@
+<div class="app-container full-width">
+	<div class="row">
+		<div class="static-modal">
+			<div class="modal" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h4 class="modal-title"><strong>HRA</strong> Chargeable Result</h4>
+			      </div>
+			      <div class="modal-body custom-badge">
+	           			<div class="list-group __timeline">
+					      <div class="list-group-item">
+					        <span class="badge ">Rs. {{data.storage.basic}}</span> {{data.storage.residing_at}}% of Basic Salary
+					      </div>
+					      <div class="list-group-item">
+					        <span class="badge ">Rs. {{data.storage.rcvd }}</span> HRA Received
+					      </div>
+					      <div class="list-group-item">
+					        <span class="badge ">Rs. {{data.storage.ex_rp }}</span> Excess Of Rent Paid Over 10% Of Salary
+					      </div>
+					    </div>
+					    <p class="margin-22">The least of the above three is exempt from HRA</p>
+					    <div class="list-group">
+					     	<div class="list-group-item list-group-item-success">
+						        <span class="badge ">Rs. {{data.storage.ex_rp }}</span> Amount of Exempted HRA
+					      	</div> 
+					      	<div class="list-group-item list-group-item-success">
+						        <span class="badge "> Rs. {{data.storage.total_hra }}</span> HRA chargeable to tax
+					      	</div>  
+					    </div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" [routerLink]="['/']">Back</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+</div>
+

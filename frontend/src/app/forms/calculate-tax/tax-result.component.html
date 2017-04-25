@@ -1,0 +1,23 @@
+<div class="app-container full-width">
+	<div class="row">
+		<div class="static-modal">
+			<div class="modal" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h4 class="modal-title"><strong>HRA</strong> Chargeable Result<span class="title-badge"><i class="fa fa-rupee"></i>  {{data.storage.life}}</span></h4>
+			      </div>
+			      <div class="modal-body text-decorate">
+	           			<p>To claim the maximum deduction, an amount of Rs.</p>
+	           			<p class="big-text"><i class="fa fa-rupee"></i> {{data.storage.life}}</p>
+	           			<p>can be invested further.</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" [routerLink]="['/']">Back</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+</div>

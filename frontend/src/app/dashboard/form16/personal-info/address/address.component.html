@@ -1,0 +1,129 @@
+<h3>Address</h3>
+<div class="inner_tab_cont">
+	<h4>Your Address</h4>
+	<p>You can enter either your current or permanent address here.</p>
+	<form  (ngSubmit)="addressInfo()" #addressInfoForm="ngForm" novalidate>
+	<fieldset>
+		<legend>Address</legend>
+		<div class="form-group col-lg-4">
+			<label>Flat/Door/Block Number *</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="address_flat" name="address_flat" #address_flat="ngModel"  [(ngModel)]="model.address_flat" required >
+				<div *ngIf="address_flat.errors && (address_flat.dirty || address_flat.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!address_flat.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Road / Street</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="address_road" name="address_road" #address_road="ngModel"  [(ngModel)]="model.address_road" required>
+				<div *ngIf="address_road.errors && (address_road.dirty || address_road.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!address_road.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Area / Locality</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="address_area" name="address_area" #address_area="ngModel"  [(ngModel)]="model.address_area" required>
+					<div *ngIf="address_area.errors && (address_area.dirty || address_area.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!address_area.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Town / City</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="address_town" name="address_town" #address_town="ngModel"  [(ngModel)]="model.address_town" required>
+					<div *ngIf="address_town.errors && (address_town.dirty || address_town.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!address_town.errors.required">
+			              	Required
+			            </div>   
+			     	</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="gender">State</label>
+			<div class="input_field">
+				<select class="form-control"  name="address_state"  #address_state="ngModel" [(ngModel)]="model.address_state" required>
+				  <option>Gujarat</option>
+				  <option>Delhi</option>
+				  <option>Madhya Pradesh</option>
+				</select>
+				<div *ngIf="address_state.errors && (address_state.dirty || address_state.touched)"
+			             class="alert alert-danger">
+		            <div [hidden]="!address_state.errors.required">
+		              	Required
+		            </div>   
+		     	</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="gender">Country</label>
+			<div class="input_field">
+				<select class="form-control" name="address_country"  #address_country="ngModel" [(ngModel)]="model.address_country" required>
+				  <option>India</option>
+				  <option>China</option>
+				  <option>Japan</option>
+				</select>
+				<div *ngIf="address_country.errors && (address_country.dirty || address_country.touched)"
+			             class="alert alert-danger">
+		            <div [hidden]="!address_country.errors.required">
+		              	Required
+		            </div>   
+		     	</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Pin code</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="address_pincode" name="address_pincode" #address_pincode="ngModel"  [(ngModel)]="model.address_pincode" required>
+					<div *ngIf="address_pincode.errors && (address_pincode.dirty || address_pincode.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!address_pincode.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Mobile no.</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="address_mobileno" name="address_mobileno" #address_mobileno="ngModel"  [(ngModel)]="model.address_mobileno" required>
+					<div *ngIf="address_mobileno.errors && (address_mobileno.dirty || address_mobileno.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!address_mobileno.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Email Address</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="address_email" name="address_email" #address_email="ngModel"  [(ngModel)]="model.address_email" required>
+					<div *ngIf="address_email.errors && (address_email.dirty || address_email.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!address_email.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-12">
+				<button type="submit" class="btn btn-primary" [disabled]="!addressInfoForm.form.valid">Save</button>
+		</div>
+	</fieldset>
+	</form>
+</div>

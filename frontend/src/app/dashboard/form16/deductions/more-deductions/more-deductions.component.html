@@ -1,0 +1,284 @@
+<form novalidate (ngSubmit)="saveMoreDeductions()" #moreDeductionForm="ngForm">
+<h3>More deductions</h3>
+			<div class="inner_tab_cont">
+				<h4>More deductions Under Section 80</h4>
+				<fieldset>
+					<legend>Section 80D: Deductions for Medical Insurance</legend>
+					<p class="col-lg-12 form-para">Deductions for Medical Insurance Premium Paid by you</p>
+					<div class="form-group col-lg-4">
+						<label>Medical Insurance Premium for you, your spouse, or dependent children</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80d" name="deductionsection80d" #deductionsection80d="ngModel"  [(ngModel)]="model.deductionsection80d" required />
+							 <div *ngIf="deductionsection80d.errors && (deductionsection80d.dirty || deductionsection80d.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80d.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+					<div class="form-group col-lg-4">
+						<label>Is any of the policy holder a senior citizen
+							<br/><p>60 years or older</p>
+						</label>
+						
+						<div class="input_field">
+							<select class="form-control">
+							  <option>No policy holder is a senior citizen</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group col-lg-4">
+						<label>Medical Insurance Premium for your parents
+							<br/><p>Medical insurance premium paid by you for your parents.</p>
+						</label>
+						
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsectionmedical" name="deductionsectionmedical" #deductionsectionmedical="ngModel"  [(ngModel)]="model.deductionsectionmedical" required />
+							 <div *ngIf="deductionsectionmedical.errors && (deductionsectionmedical.dirty || deductionsectionmedical.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsectionmedical.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+					<div class="form-group col-lg-4">
+						<label>Are your parents who hold the policy senior citizens?
+							<br/><p>60 years or older</p>
+						</label>
+						
+						<div class="input_field">
+							<select class="form-control">
+							  <option>No policy holder is a senior citizen</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>	
+				<fieldset>
+					<legend>Section 80CCG - Rajiv Gandhi Equity Saving Scheme</legend>
+					<div class="form-group col-lg-4">
+						<label>Investment made under Rajiv Gandhi Equity Saving Scheme</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80ccg" name="deductionsection80ccg" #deductionsection80ccg="ngModel"  [(ngModel)]="model.deductionsection80ccg" required />
+							 <div *ngIf="deductionsection80ccg.errors && (deductionsection80ccg.dirty || deductionsection80ccg.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80ccg.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80E - Education Loan on higher studies (Graduate or PostGraduate)</legend>
+					<p class="col-lg-12 form-para">You can claim tax deduction on the interest paid on an education loan for higher studies</p>
+					<div class="form-group col-lg-4">
+						<label>Interest on higher education loan paid this year
+							<br/><p>Interest paid by you on loan taken out by you. Loan can be for yourself or your spouse or your children </p>
+						</label>
+						
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80e" name="deductionsection80e" #deductionsection80e="ngModel"  [(ngModel)]="model.deductionsection80e" required />
+							 <div *ngIf="deductionsection80e.errors && (deductionsection80e.dirty || deductionsection80e.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80e.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<h4>The following deductions are applicable less often.</h4>
+				<fieldset>
+					<legend>Section 80E - Education Loan on higher studies (Graduate or PostGraduate)</legend>
+					<p class="col-lg-12 form-para">You can claim tax deduction on the interest paid on an education loan for higher studies</p>
+					<div class="form-group col-lg-4">
+						<label>Interest on higher education loan paid this year</label>
+						<p>Interest paid by you on loan taken out by you. Loan can be for yourself or your spouse or your children </p>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80e1" name="deductionsection80e1" #deductionsection80e1="ngModel"  [(ngModel)]="model.deductionsection80e1" required />
+							 <div *ngIf="deductionsection80e1.errors && (deductionsection80e1.dirty || deductionsection80e1.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80e1.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80CCD (1) and (1B) - Employee Contribution to New Pension Scheme (NPS).</legend>
+					<p class="col-lg-12 form-para">Employee's contribution to the New Pension System (NPS).</p>
+					<p class="col-lg-12 form-small">Please enter your own contribution to NPS.<br/>
+									ClearTax will automatically split it into Section 80 CCD(1) and CCD(1B) in your tax return.<br/>
+									The split will be optimised to give you maximum tax savings.</p>
+					<div class="form-group col-lg-4">
+						<label>Contribution towards Section 80CCD(1)</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80ccd1" name="deductionsection80ccd1" #deductionsection80ccd1="ngModel"  [(ngModel)]="model.deductionsection80ccd1" required />
+							 <div *ngIf="deductionsection80ccd1.errors && (deductionsection80ccd1.dirty || deductionsection80ccd1.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80ccd1.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80CCD(2) - Employer Contribution in NPS</legend>
+					<div class="form-group col-lg-4">
+						<label>Employers contribution towards NPS (upto 10% of Salary).</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80ccd2" name="deductionsection80ccd2" #deductionsection80ccd2="ngModel"  [(ngModel)]="model.deductionsection80ccd2" required />
+							 <div *ngIf="deductionsection80ccd2.errors && (deductionsection80ccd2.dirty || deductionsection80ccd2.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80ccd2.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80GG - Deduction for House Rent. Self-employed or Salary with no HRA.</legend>
+					<p class="col-lg-12 form-para">Not a commonly applicable deduction. Please be careful while claiming. If you receive HRA benefit, then you cannot claim this deduction.</p>
+					<p class="col-lg-12 form-para">If you are looking to claim HRA, this is NOT the section.</p>
+					<p class="col-lg-12 form-small">Eligibility: Your spouse or minor child should not own House Property in same town where paying rent. Self occupied house property Interest deduction should not have been availed.</p>
+					<div class="form-group col-lg-4">
+						<label>Rent Paid Per Month</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80gg" name="deductionsection80gg" #deductionsection80gg="ngModel"  [(ngModel)]="model.deductionsection80gg" required />
+							 <div *ngIf="deductionsection80gg.errors && (deductionsection80gg.dirty || deductionsection80gg.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80gg.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+					<div class="form-group col-lg-4">
+						<label>Number of Months Rent Paid</label>
+						<div class="input_field">
+							<select class="form-control">
+							  <option>1</option>
+							  <option>2</option>
+							  <option>3</option>
+							  <option>4</option>
+							  <option>5</option>
+							  <option>6</option>
+							  <option>7</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80DDB: Deductions for treatment of specified diseases and ailments</legend>
+					<p class="col-lg-12 form-para">This deduction is for certain specified diseases. (It is not a commonly applicable deduction). Please be careful while claiming this deduction.</p>
+					<div class="form-group col-lg-4">
+						<label>Medical Treatment Costs for specified Diseases under Section 80DDB</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80ddb" name="deductionsection80ddb" #deductionsection80ddb="ngModel"  [(ngModel)]="model.deductionsection80ddb" required />
+							 <div *ngIf="deductionsection80ddb.errors && (deductionsection80ddb.dirty || deductionsection80ddb.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80ddb.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+					<div class="form-group col-lg-4">
+						<label>Age of person for whom deduction is being claimed. </label>
+						<div class="input_field">
+							<select class="form-control">
+							  <option>Below 60 years</option>
+							</select>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80QQB - Royalty Received on books</legend>
+					<p class="col-lg-12 form-para">Deduction for Author of literary/scientific/artistic book. Royalty/copyright-fees/lump-sum consideration are eligible for deduction.</p>
+					<div class="form-group col-lg-4">
+						<label>Enter the deduction amount</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80qqb" name="deductionsection80qqb" #deductionsection80qqb="ngModel"  [(ngModel)]="model.deductionsection80qqb" required />
+							 <div *ngIf="deductionsection80qqb.errors && (deductionsection80qqb.dirty || deductionsection80qqb.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80qqb.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80RRB - Income on Patents/Inventions</legend>
+					<p class="col-lg-12 form-para">Deduction for Patentee - Royalty/transfer-of-rights/lump-sum consideration are eligible for deduction.</p>
+					<div class="form-group col-lg-4">
+						<label>Enter the deduction amount</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80rrb" name="deductionsection80rrb" #deductionsection80rrb="ngModel"  [(ngModel)]="model.deductionsection80rrb" required />
+							 <div *ngIf="deductionsection80rrb.errors && (deductionsection80rrb.dirty || deductionsection80rrb.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80rrb.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80GGA - Contribution To Research or Rural Development</legend>
+					<p class="col-lg-12 form-para">For example, Helpage India or CRY are eligible under Section 80GGA</p>
+					<div class="form-group col-lg-4">
+						<label>Contribution to Research & Development or Rural Development</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80gga" name="deductionsection80gga" #deductionsection80gga="ngModel"  [(ngModel)]="model.deductionsection80gga" required />
+							 <div *ngIf="deductionsection80gga.errors && (deductionsection80gga.dirty || deductionsection80gga.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80gga.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80GGC - Contribution To Political Party</legend>
+					<div class="form-group col-lg-4">
+						<label>Contribution or Donations to Political Party</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80cgc" name="deductionsection80cgc" #deductionsection80cgc="ngModel"  [(ngModel)]="model.deductionsection80cgc" required />
+							 <div *ngIf="deductionsection80cgc.errors && (deductionsection80cgc.dirty || deductionsection80cgc.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80cgc.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Section 80JJA</legend>
+					<div class="form-group col-lg-4">
+						<label>Deduction exempting profits from bio-degradable waste business</label>
+						<div class="input_field">
+							<input type="text" class="form-control" id="deductionsection80jja" name="deductionsection80jja" #deductionsection80jja="ngModel"  [(ngModel)]="model.deductionsection80jja" required />
+							 <div *ngIf="deductionsection80jja.errors && (deductionsection80jja.dirty || deductionsection80jja.touched)"
+									 class="alert alert-danger">
+									<div [hidden]="!deductionsection80jja.errors.required">
+										Required
+									</div>   
+								</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div class="form-group col-lg-12">
+			  			<button type="submit" class="btn btn-primary" [disabled]="!moreDeductionForm.form.valid">Save</button>
+					</div>
+				</fieldset>
+			</div>
+</form>			

@@ -1,0 +1,155 @@
+<h3>House Property</h3>
+<div class="inner_tab_cont">
+<form novalidate (ngSubmit)="houseingProperty()" #housePropertyForm="ngForm">
+	<h4>Tax savings on Self-occupied House Property</h4>
+	<fieldset>
+		<legend>Interest paid on housing loan for Self occupied property</legend>
+		<p class="col-lg-12 form-para">If you have a housing loan against a house you live in (Self Occupied property) then you can claim a tax deduction of upto Rs. 2,00,000</p>
+		<div class="form-group col-lg-4">
+			<label>Interest paid on loan for self occupied property 
+				<br/><p>The loan should have been taken after April 1, 1999</p>
+			</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="House_lone_property" name="House_lone_property" #House_lone_property="ngModel"  [(ngModel)]="model.House_lone_property" required>
+				<div *ngIf="House_lone_property.errors && (House_lone_property.dirty || House_lone_property.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!House_lone_property.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Interest paid during the pre-construction period of self occupied property</legend>
+		<div class="form-group col-lg-4">
+			<label>The financial year previous to completion of construction 
+				<br/><p>For example: If construction completed on 17th July 2010, you need to specify 2009-10</p>
+			</label>
+			
+			<div class="input_field">
+				<select class="form-control" name="House_financial_year_previous" #House_financial_year_previous="ngModel"  [(ngModel)]="model.House_financial_year_previous" required>
+				  <option>2014-2015</option>
+				</select>
+				<div *ngIf="House_financial_year_previous.errors && (House_financial_year_previous.dirty || House_financial_year_previous.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!House_financial_year_previous.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Total interest amount paid during the pre-construction period 
+				<br/><p>Interest paid from date of borrowing till 31st March of previous financial year. </p>
+			</label>
+			
+			<div class="input_field">
+				<input type="text" class="form-control" id="House_interest_paid" name="House_interest_paid" #House_interest_paid="ngModel"  [(ngModel)]="model.House_interest_paid" required>
+					<div *ngIf="House_interest_paid.errors && (House_interest_paid.dirty || House_interest_paid.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!House_interest_paid.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Your House Address</legend>
+		<div class="form-group col-lg-4">
+			<label>Flat/Door/Block Number *</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="House_flatno" name="House_flatno" #House_flatno="ngModel"  [(ngModel)]="model.House_flatno" required>
+					<div *ngIf="House_flatno.errors && (House_flatno.dirty || House_flatno.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!House_flatno.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Road / Street</label>
+			<div class="input_field">
+					<input type="text" class="form-control" id="House_road" name="House_road" #House_road="ngModel"  [(ngModel)]="model.House_road" required>
+					<div *ngIf="House_road.errors && (House_road.dirty || House_road.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!House_road.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Area / Locality *</label>
+			<div class="input_field">
+					<input type="text" class="form-control" id="House_area" name="House_area" #House_area="ngModel"  [(ngModel)]="model.House_area" required>
+					<div *ngIf="House_area.errors && (House_area.dirty || House_area.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!House_area.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Town / City *</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="House_town" name="House_town" #House_town="ngModel"  [(ngModel)]="model.House_town" required>
+				<div *ngIf="House_town.errors && (House_town.dirty || House_town.touched)"
+		             class="alert alert-danger">
+		            <div [hidden]="!House_town.errors.required">
+		              	Required
+		            </div>   
+		     	</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>State *</label>
+			<div class="input_field">
+				<select class="form-control" name="House_state" #House_state="ngModel"  [(ngModel)]="model.House_state" required>
+				  <option>Delhi</option>
+				</select>
+				<div *ngIf="House_state.errors && (House_state.dirty || House_state.touched)"
+		             class="alert alert-danger">
+		            <div [hidden]="!House_state.errors.required">
+		              	Required
+		            </div>   
+		     	</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label>Pincode *</label>
+			<p>Enter 999999 in case of Foreign Address</p>
+			<div class="input_field">
+				<input type="text" class="form-control" id="House_pin" name="House_pin" #House_pin="ngModel"  [(ngModel)]="model.House_pin" required>
+					<div *ngIf="House_pin.errors && (House_pin.dirty || House_pin.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!House_pin.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Property Ownership</legend>
+		<div class="form-group col-lg-4">
+			<label>Your ownership share of the Property (Percentage %) *</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="House_owner" name="House_owner" #House_owner="ngModel"  [(ngModel)]="model.House_owner" required>
+					<div *ngIf="House_owner.errors && (House_owner.dirty || House_owner.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!House_owner.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-12">
+			<button class="btn btn-primary pull-left"  [disabled]="!housePropertyForm.form.valid">Save</button>
+		</div>
+	</fieldset>
+</form>	
+</div>	

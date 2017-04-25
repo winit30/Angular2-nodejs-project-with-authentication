@@ -1,0 +1,153 @@
+<h3>Other Income</h3>
+<div class="inner_tab_cont">
+	<form novalidate (ngSubmit)="otherIncome()" #otherIncomeForm="ngForm">
+	<h4>Income other than Salary</h4>
+	<fieldset>
+	
+		<legend>Interest Income</legend>
+		<div class="form-group col-lg-4">
+			<label for="Intincome">Interest Income</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="incomeotherintincome" name="incomeotherintincome" #incomeotherintincome="ngModel"  [(ngModel)]="model.incomeotherintincome" required>
+				 <div *ngIf="incomeotherintincome.errors && (incomeotherintincome.dirty || incomeotherintincome.touched)"
+						 class="alert alert-danger">
+						<div [hidden]="!incomeotherintincome.errors.required">
+							Required
+						</div>   
+					</div>
+			</div>
+		</div>
+		
+		<div class="form-group col-lg-4">
+			<label for="otherint">Other Interest Income: From Fixed deposits etc
+				<br/><p>Interest from sweep accounts converted to FDs also specified here </p>
+			</label>
+			
+			<div class="input_field">
+				<input type="text" class="form-control" id="incomeotherinterestincome" name="incomeotherinterestincome" #incomeotherinterestincome="ngModel"  [(ngModel)]="model.incomeotherinterestincome" required>
+				 <div *ngIf="incomeotherinterestincome.errors && (incomeotherinterestincome.dirty || incomeotherinterestincome.touched)"
+						 class="alert alert-danger">
+						<div [hidden]="!incomeotherinterestincome.errors.required">
+							Required
+						</div>   
+					</div>
+			</div>
+		</div>
+		
+		
+	</fieldset>
+	<fieldset>
+		<legend>Other Income</legend>
+		<div class="form-group col-lg-4">
+			<label for="Other Income">Any Other Income
+				<br/><p>Report any other income which is not part of Income from Salary, House Property, Capital Gain or Business and Profession head. Gifts can be declared as Income here.</p>
+			</label>
+			
+			<div class="input_field">
+				<input type="text" class="form-control" id="incomeotherincome" name="incomeotherincome" #incomeotherincome="ngModel"  [(ngModel)]="model.incomeotherincome" required>
+				 <div *ngIf="incomeotherincome.errors && (incomeotherincome.dirty || incomeotherincome.touched)"
+						 class="alert alert-danger">
+						<div [hidden]="!incomeotherincome.errors.required">
+							Required
+						</div>   
+					</div>
+			</div>
+		</div>
+	</fieldset>	
+	<fieldset>
+		<legend>Exempt Income</legend>
+		<div class="form-group col-lg-4">
+			<label for="Exempt Income">Dividend earned
+				<br/><p>Dividend from shares. Income earned on investments in Mutual Funds, ULIPs, UTI.</p>
+			</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="incomeotherexemptincome" name="incomeotherexemptincome" #incomeotherexemptincome="ngModel"  [(ngModel)]="model.incomeotherexemptincome" required>
+				 <div *ngIf="incomeotherexemptincome.errors && (incomeotherexemptincome.dirty || incomeotherexemptincome.touched)"
+						 class="alert alert-danger">
+						<div [hidden]="!incomeotherexemptincome.errors.required">
+							Required
+						</div>   
+					</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="Exempt Interest Income">Exempt Interest Income
+				<br/><p>Example: Interest earned on PPF</p>
+			</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="incomeotherextempintincome" name="incomeotherextempintincome" #incomeotherextempintincome="ngModel"  [(ngModel)]="model.incomeotherextempintincome" required>
+				 <div *ngIf="incomeotherextempintincome.errors && (incomeotherextempintincome.dirty || incomeotherextempintincome.touched)"
+						 class="alert alert-danger">
+						<div [hidden]="!incomeotherextempintincome.errors.required">
+							Required
+						</div>   
+					</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="OthermiscellaneousExempt Income">Other miscellaneous exempt Income
+				<br/><p>Specify any other exempt income</p>
+			</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="incomeotherothmisextempincome" name="incomeotherothmisextempincome" #incomeotherothmisextempincome="ngModel"  [(ngModel)]="model.incomeotherothmisextempincome" required>
+				 <div *ngIf="incomeotherothmisextempincome.errors && (incomeotherothmisextempincome.dirty || incomeotherothmisextempincome.touched)"
+						 class="alert alert-danger">
+						<div [hidden]="!incomeotherothmisextempincome.errors.required">
+							Required
+						</div>   
+					</div>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Agriculture Income</legend>
+		<div class="form-group col-lg-4">
+			<label for="AgricultureIncome">Gross Agriculture Receipt
+				<br/><p>Specify gross agricultural income</p>
+			</label>
+			
+			<div class="input_field">
+				<input type="text" class="form-control" id="incomeotheragricultureincome" name="incomeotheragricultureincome" #incomeotheragricultureincome="ngModel"  [(ngModel)]="model.incomeotheragricultureincome" required>
+				 <div *ngIf="incomeotheragricultureincome.errors && (incomeotheragricultureincome.dirty || incomeotheragricultureincome.touched)"
+						 class="alert alert-danger">
+						<div [hidden]="!incomeotheragricultureincome.errors.required">
+							Required
+						</div>   
+					</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="ExpenditureOnAgriculture">Expenditure On Agriculture
+				<br/><p>Specify expenditure on agriculture sources</p>
+			</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="incomeotherexpenditureonagriculture" name="incomeotherexpenditureonagriculture" #incomeotherexpenditureonagriculture="ngModel"  [(ngModel)]="model.incomeotherexpenditureonagriculture" required>
+				 <div *ngIf="incomeotherexpenditureonagriculture.errors && (incomeotherexpenditureonagriculture.dirty || incomeotherexpenditureonagriculture.touched)"
+						 class="alert alert-danger">
+						<div [hidden]="!incomeotherexpenditureonagriculture.errors.required">
+							Required
+						</div>   
+					</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="UnabsorbedAgricultureLoss">Unabsorbed Agriculture Loss
+				<br/><p>Specify unabsorbed agriculture loss</p>
+			</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="incomeotherunabsorbedagricultureloss" name="incomeotherunabsorbedagricultureloss" #incomeotherunabsorbedagricultureloss="ngModel"  [(ngModel)]="model.incomeotherunabsorbedagricultureloss" required>
+				 <div *ngIf="incomeotherunabsorbedagricultureloss.errors && (incomeotherunabsorbedagricultureloss.dirty || incomeotherunabsorbedagricultureloss.touched)"
+						 class="alert alert-danger">
+						<div [hidden]="!incomeotherunabsorbedagricultureloss.errors.required">
+							Required
+						</div>   
+					</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-12">
+			<button class="btn btn-primary pull-left"  [disabled]="!otherIncomeForm.form.valid">Save</button>
+		</div>
+	</fieldset>
+	</form>
+</div>
+									

@@ -1,0 +1,87 @@
+<aside class="app-sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <a class="sidebar-brand" href="javascript:;"><span class="highlight">Your</span> Logo</a>
+    <button type="button" class="sidebar-toggle">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+  <div class="sidebar-menu">
+    <ul class="sidebar-nav">
+     <li>
+        <a [routerLink]="['/dashboard']">
+          <div class="icon">
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+          </div>
+          <div class="title">Dashboard</div>
+        </a>
+      </li>
+
+      <li class="" [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/home']">
+          <div class="icon">
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </div>
+          <div class="title">Home</div>
+        </a>
+      </li>
+      <li class="" [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/history']">
+          <div class="icon">
+            <i class="fa fa-history" aria-hidden="true"></i>
+          </div>
+          <div class="title">History</div>
+        </a>
+      </li>
+    <li class="" [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/track-status']">
+          <div class="icon">
+            <i class="fa fa-pie-chart" aria-hidden="true"></i>
+          </div>
+          <div class="title">Track Status</div>
+        </a>
+      </li>
+    <li class="" [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/purchaseplan']">
+          <div class="icon">
+            <i class="fa fa-rupee" aria-hidden="true"></i>
+          </div>
+          <div class="title">Purchase Plan</div>
+        </a>
+      </li>
+      <li class="" [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/document-vault']">
+          <div class="icon">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+          </div>
+          <div class="title">Document Vault</div>
+        </a>
+      </li>
+     <li class="" [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/pan-management']"  >
+          <div class="icon">
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+          </div>
+          <div class="title">Pan Management</div>
+        </a>
+      </li>
+       <li class="" [routerLinkActive]="['active']">
+        <a [routerLink]="['/dashboard/user-management']"  >
+          <div class="icon">
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+          </div>
+          <div class="title">User Management</div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-footer">
+    <ul class="menu">
+      <li>
+        <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-cogs" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li><a href="javascript:;"><span class="flag-icon flag-icon-th flag-icon-squared"></span></a></li>
+    </ul>
+  </div>
+</aside>

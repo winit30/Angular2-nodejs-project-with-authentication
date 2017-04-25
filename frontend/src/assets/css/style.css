@@ -1,0 +1,435 @@
+aside.app-sidebar {
+	height:auto;
+}
+
+body .app-container.full-width {
+	padding-left:0px;
+}
+
+body .app-container > div > div.row {
+	    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.pan-number {
+	margin-bottom:20px;
+}
+
+.form-btns .card.card-banner .card-body .content .value {
+    font-size: 1.25em;
+    font-weight: 400;
+}
+
+.card.card-banner .card-body .content .value {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.card.card-green-light {
+    background-color: #FFF;
+    text-decoration: none;
+}
+
+.table .checkbox, .table  .radio {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.card-header .align-right {
+	text-align:right;
+}
+
+
+.align-right .icon {
+	font-size: 1.3em;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(141, 146, 147, 0.15);
+    color: rgba(141, 146, 147, 0.3);
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+	float:right;
+	    margin: 0 6px;
+}
+
+.pan-manage {
+	height:40px;
+	line-height:40px;
+}
+
+.align-right .icon:hover {
+	font-size: 1.5em;
+}
+
+.align-right .icon.add{
+	background-color: rgba(57, 195, 218, 0.25);  
+}
+
+.align-right .icon.add a {
+	color: rgba(57, 195, 218, 0.75);
+}
+
+.align-right .icon.add:hover a {
+	color: rgba(57, 195, 218, 0.95);
+}
+
+.align-right .icon.edit{
+    background-color: rgba(252, 130, 41, 0.15); 
+}
+
+.align-right .icon.edit a {
+	color: rgba(252, 130, 41, 0.55);
+}
+
+.align-right .icon.edit:hover a {
+	color: rgba(252, 130, 41, 0.75);
+}
+
+.align-right .icon.delete{
+	background-color: rgba(231, 76, 60, 0.15);
+	margin-right:0px;
+}
+
+.align-right .icon.delete a {
+	color: rgba(231, 76, 60, 0.45);
+}
+
+.align-right .icon.delete:hover a {
+	color: rgba(231, 76, 60, 0.65);
+}
+
+.personal_info {
+	margin-bottom:20px;
+}
+
+.clearfix {
+	clear:both;
+	overflow:hidden;
+}
+
+.login-header{
+	display: block !important;
+}
+
+.login-header h3 {
+	margin:0;
+	padding:0;
+	width:100%;
+	text-align:left;
+	display: block;
+	line-height: 30px;
+}
+
+.login-header p {
+	font-size:14px;
+	display: block;
+	width:100%;
+	font-weight:400;
+}
+
+.app-form form .help-block {
+	font-size: 12px;
+    position: relative;
+    margin-top: -10px;
+    color: #f00;
+}
+
+.app-form .help-block {
+    display: block;
+	color:inherit;
+	margin:0px;
+	line-height: 22px;
+}
+
+.app-form .forgot-password, .app-form .remember-me,.app-form .forgot-password-text {
+	border:none;
+}
+
+.app-form .hasAccount {
+	margin-top:4rem;
+}
+
+/*************E filing css starts****************/
+
+.efiling_cont {
+	margin-bottom:20px;
+}
+
+.accordian h2 {
+	font-size: 18px !important;
+    background: #39c3da;
+    line-height: 46px;
+    padding-left: 15px;
+    font-weight: 300;
+margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
+.accordian .tab_cont {
+	padding: 15px;
+    background-color: #fff;
+}
+
+.accordian .tab_cont h3{
+	padding: 10px 15px;
+    font-size: 16px;
+    margin: 0px 0 20px 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #1a91a5;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: #baf1fb;
+}
+}
+
+
+
+.accordian .inner_tab_cont h4, .accordian .inner_tab_cont> p{
+	padding:0 15px;
+	color:#000;
+}
+.accordian .inner_tab_cont h4 {
+	padding-top:15px;
+}
+
+.accordian .tab_cont .inner_tab_cont {
+	display:none;
+}
+
+.accordian .tab_cont li:first-child .inner_tab_cont {
+	display:block;
+}
+
+.accordian input, .accordian select{
+	background-image: none;
+    border: 1px solid #20aa73;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    behavior: url(common/less/PIE.htc);
+    z-index: 10;
+    position: relative;
+    box-shadow: none;
+    color: #353535;
+    display: block;
+    height: 38px;
+    line-height: 1.42857;
+    padding: 6px 9px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+    line-height: 16px;
+    resize: none;
+	max-width: 525px;
+	margin-bottom:0px;
+}
+
+.accordian input:hover ,.accordian select:hover{
+	 border: 1px solid #20aa73 !important;
+}
+
+.accordian input:focus, .accordian select:focus {
+	 border: 1px solid #20aa73 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.accordian fieldset {
+	border: 1px solid #aaa;
+    overflow: hidden;
+    padding: 15px 0 0;
+    margin:30px 0;
+	-webkit-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.2);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.2);
+    box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.2);
+}
+
+.accordian label {
+	font-weight: 400;
+    color: #333;
+}
+
+.accordian .form-para {
+	padding-bottom:15px;
+	font-size:16px;
+	font-weight:400;
+	color:#000;
+}
+
+.accordian .form-small {
+	color:#000;
+	font-weight:400;
+	font-size:13px;
+	margin-bottom:15px;
+	line-height:21px;
+}
+
+.accordian .form-group {
+	margin-bottom:0px;
+}
+
+.accordian .form-group p {
+	font-size: 12px;
+    line-height: 16px;
+    color: #777;
+}
+
+.accordian li {
+	margin-bottom:5px;
+}
+
+.accordian li h2 {
+	width:100%;
+	cursor:pointer;
+}
+
+.accordian li .tab_cont {
+	display:none;
+}
+
+.accordian li .tab_cont li:last-child {
+	margin-bottom:30px;
+}
+
+.accordian li.active .tab_cont {
+	display:block;
+}
+
+legend {
+    display: block;
+    width: auto !important;
+    padding: 0;
+    margin-bottom: 0px !important;
+    font-size: 14px !important;
+    line-height: inherit;
+    color: #000;
+    border: 0;
+    border-bottom: 0px !important;
+    margin-left: 15px;
+    font-weight: 600;
+}
+
+.accordian h1 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.accordian h2 a {
+	color:#fff;
+}
+
+.accordian .input_field{
+	min-height:70px;
+}
+
+.accordian ul {
+	    padding: 0;
+    list-style: none;
+}
+
+.addhtml_btn .icon {
+    font-size: 1.6em;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(141, 146, 147, 0.15);
+    color: rgba(141, 146, 147, 0.3);
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.two_buttons_padding {
+    padding: 90px 30px !important;
+}
+
+.card-green-light.colored {
+        background-color: #29c75f;
+}
+
+.card.colored .value , .card.colored .title{
+    color: #fff !important;
+}
+
+.card-blue-light.colored {
+     background-color: #39c3da;
+}
+
+.card.colored .card-body .icon {
+    color: #FFF !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.form16-modal-msg {
+    text-align: center;
+}
+
+.form16-modal-msg .icon {
+    display: inline-block;
+    border: 6px solid #29c75f;
+    margin-bottom:23px;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    color: #27c65d;
+    font-size: 26px;   
+    line-height: 35px;
+}
+
+.table-icon {
+    width: 21px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50px;
+    margin-right: 4px;
+    font-size: 12px;
+}
+
+.table-icon.fa-check {
+     background: #caf1d7;
+    color: #51d17d;
+}
+
+.table-icon.fa-close {
+        background: #fce4e2;
+    color: #f6b9b3;
+}
+
+.body-title {
+    padding-bottom: 15px;
+}
+
+.upgrade-plan .right {
+    text-align: right;
+}
+
+.card-body.section {
+    overflow: hidden;
+}
+
+/*************E filing css ends****************/

@@ -1,0 +1,116 @@
+<h3>Info</h3>
+<div class="inner_tab_cont">
+<h4>Permanent Information</h4>
+<p>Please enter your information here.</p>
+<form novalidate (ngSubmit)="permanentInfo()" #permanentInfoForm="ngForm">
+	<fieldset>
+		<legend>Personal information</legend>
+		<div class="form-group col-lg-4">
+			<label for="fname">First name</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="permanentfirstname" name="permanentfirstname" #permanentfirstname="ngModel"  [(ngModel)]="model.permanentfirstname" required>
+				 <div *ngIf="permanentfirstname.errors && (permanentfirstname.dirty || permanentfirstname.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!permanentfirstname.errors.required">
+			              	Required
+			            </div>   
+			        </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="mname">Middle name</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="permanentmiddlename" name="permanentmiddlename" #permanentmiddlename="ngModel"  [(ngModel)]="model.permanentmiddlename" required>
+				<div *ngIf="permanentmiddlename.errors && (permanentmiddlename.dirty || permanentmiddlename.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!permanentmiddlename.errors.required">
+			              	Required
+			            </div>   
+			        </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="lname">Last name</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="permanentlastname" name="permanentlastname" #permanentlastname="ngModel"  [(ngModel)]="model.permanentlastname" required> 
+				<div *ngIf="permanentlastname.errors && (permanentlastname.dirty || permanentlastname.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!permanentlastname.errors.required">
+			              	Required
+			            </div>   
+			        </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="gender">Gender</label>
+			<div class="input_field">
+				<select class="form-control" name="permanentgender" #permanentgender="ngModel"  [(ngModel)]="model.permanentgender" required>
+				  <option>Male</option>
+				  <option>Female</option>
+				</select>
+				<div *ngIf="permanentgender.errors && (permanentgender.dirty || permanentgender.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!permanentgender.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="date">Date of birth</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="permanentdob" placeholder="dd/mm/yy"  name="permanentdob" #permanentdob="ngModel"  [(ngModel)]="model.permanentdob" required>
+				<div *ngIf="permanentdob.errors && (permanentdob.dirty || permanentdob.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!permanentdob.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="date">PAN number</label>
+			<div class="input_field">
+				<input type="text" class="form-control"  id="permanentpannumb" name="permanentpannumb" #permanentpannumb="ngModel"  [(ngModel)]="model.permanentpannumb" required>
+				<div *ngIf="permanentpannumb.errors && (permanentpannumb.dirty || permanentpannumb.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!permanentpannumb.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="fathername">Father's name</label>
+			<div class="input_field">
+				<input type="text" class="form-control" id="permanentfather_name" name="permanentfather_name" #permanentfather_name="ngModel"  [(ngModel)]="model.permanentfather_name" required>
+					<div *ngIf="permanentfather_name.errors && (permanentfather_name.dirty || permanentfather_name.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!permanentfather_name.errors.required">
+			              	Required
+			            </div>   
+			     	</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4">
+			<label for="gender">Marital Satatus</label>
+			<div class="input_field">
+				<select class="form-control"  name="permanentmaritalstatus" #permanentmaritalstatus="ngModel"  [(ngModel)]="model.permanentmaritalstatus" required>
+				  <option>Prefer not to disclose</option>
+				  <option>Unmarried</option>
+				  <option>Married</option>
+				</select>
+				<div *ngIf="permanentmaritalstatus.errors && (permanentmaritalstatus.dirty || permanentmaritalstatus.touched)"
+			             class="alert alert-danger">
+		            <div [hidden]="!permanentmaritalstatus.errors.required">
+		              	Required
+		            </div>   
+		     	</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-12">
+			<button type="submit" class="btn btn-primary" [disabled]="!permanentInfoForm.form.valid">Save</button>
+		</div>
+	</fieldset>
+</form>	
+</div>

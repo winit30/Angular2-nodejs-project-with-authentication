@@ -1,0 +1,290 @@
+
+	
+		<h3>Section 80 deductions</h3>
+		<div class="inner_tab_cont">
+			<div class="show-hide-tabs" [hidden]="isDonatonActive">
+			<h4>Deductions Under Section 80</h4>
+			<form novalidate (ngSubmit)="saveSectionEightyDeduct()" #sectionEightyDeductForm="ngForm">
+			<fieldset>
+				<legend>Investments under Section 80C</legend>
+				<p class="col-lg-12 form-para">You can claim a deduction of upto Rs. 1,50,000 under this section. 
+		Add up all your 80C deduction and specify total amount here.</p>
+				<div class="form-group col-lg-12">
+					<label>Investment for Section 80C </label>
+					<div class="input_field">
+						<input type="text" class="form-control" id="deductionsection80c" name="deductionsection80c" #deductionsection80c="ngModel"  [(ngModel)]="model.deductionsection80c" required/>
+						 <div *ngIf="deductionsection80c.errors && (deductionsection80c.dirty || deductionsection80c.touched)"
+								 class="alert alert-danger">
+								<div [hidden]="!deductionsection80c.errors.required">
+									Required
+								</div>   
+							</div>
+					</div>
+				</div>
+				<p class="col-lg-12 form-para">Section 80C includes contributions to LIC / Insurance premium, PPF, EPF, NSC, ELSS Mutual Funds, Children school fees, Payment of Principal in Housing Loan & other eligible items.</p>
+			</fieldset>
+			<fieldset>
+				<legend>Section 80TTA: Deduction for Interest earned on Savings Bank Account</legend>
+				<div class="form-group col-lg-12">
+					<label>Interest earned on Savings Bank Account</label>
+					<div class="input_field">
+						<input type="text" class="form-control" id="deductionsection80tta" name="deductionsection80tta" #deductionsection80tta="ngModel"  [(ngModel)]="model.deductionsection80tta" required />
+						 <div *ngIf="deductionsection80tta.errors && (deductionsection80tta.dirty || deductionsection80tta.touched)"
+								 class="alert alert-danger">
+								<div [hidden]="!deductionsection80tta.errors.required">
+									Required
+								</div>   
+							</div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Section 80G : Donations to charitable organizations</legend>
+				<p class="col-lg-12 form-para">The government requires itemized details of donations for Section 80G.</p>
+				
+				<div class="form-group col-lg-12">
+					
+					<div class="input_field">
+						<button class="btn btn-info">Add or remove donation under section 80G</button>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
+				<div class="form-group col-lg-12">
+				  <button type="submit" class="btn btn-primary" [disabled]="!sectionEightyDeductForm.form.valid">Save</button>
+				</div>
+			</fieldset>
+			</form>	
+
+			<div class="show-hide-tabs">
+	
+			<fieldset>
+				<h1 class="col-lg-12">Summary of Deductions Under Section 80G</h1>
+				<p class="col-lg-12 form-para">Would you like to add any Donations made under Section 80G?</p>
+				<div class="form-group col-lg-12">
+					<div class="input_field">
+							<button class="btn btn-info" (click)="donationActive()">Add donation under section</button>
+					</div>
+				</div>
+			</fieldset>
+		</div>	
+	</div>
+
+	<div class="show-hide-tabs" [hidden]="!isDonatonActive">
+	<h4>Add Donation Entry for Section 80 G</h4>
+	<br/>
+	<label class="col-md-8 ">Common 80G Organizations</label>
+    <div class="col-md-6 ">
+        <div class="input-group">
+    	  	<select class="form-control">
+          		<option>Common 80G Organizations</option>
+          		<option>PRIME MINISTERS NATIONAL RELIEF REFUND</option>
+          		<option>BAL RAKSHA BHARAT</option>
+          		<option>KALINGA INSTITUTE OF SOCIAL SCIENCES</option>
+          		<option>VIDYARAMBHAM TRUST</option>
+          		<option>LITTLE SISTERS OF THE POOR</option>
+          		<option>WORLD VISION INDIA</option>
+          		<option>ANDGRAPRADESH CHIEF MINISTER RELIEF FUND</option>
+          		<option>SHRI VINAYAKARAO SHIRGAOKAR PRATISTHAN</option>
+          		<option>CHARITIES AID FOUNDATION OF INDIA</option>
+          		<option>CRY CHILD RELIEF AND YOU</option>
+          		<option>MUKHYA MANTRI RAHAT KOSH UTTARAKHAND</option>
+          		<option>GIVE FOUNDATION</option>
+          		<option>CHILD CARE FOUNDATION</option>
+          		<option>RELIEF INDIA TRUST</option>
+          		<option>SOS CHILDRENS VILLAGE OF INDIA</option>
+          		<option>JKG EDUCATIONAL AND WELFARE SOCIETY</option>
+          		<option>SAMARTHANAM TRUST FOR DISABLED</option>
+          		<option>THE TATA RELIEF COMMITTEE</option>
+      		</select>
+    	</div>
+	</div> 
+
+		<label>Once you select an option, clearTax will automatically populate details for you. If your donee is not in the above list, please enter the details below manually.</label>
+
+		<fieldset>
+			<div class="form-group col-lg-8">
+				<label for="fname">Name of Donee</label>
+				<div class="input_field">
+						<input type="text" class="form-control" id="doneename" name="doneename" #doneename="ngModel"  [(ngModel)]="model.doneename" required/>
+							<div *ngIf="doneename.errors && (doneename.dirty || doneename.touched)"
+								 class="alert alert-danger">
+							<div [hidden]="!doneename.errors.required">
+									Required
+							</div>   
+					</div>
+				</div>
+			</div>	
+					
+					<div class="form-group col-lg-8">
+						<label for="fname">Donation Amount</label>
+						<div class="input_field">
+								<input type="text" class="form-control" id="donationamount" name="donationamount" #donationamount="ngModel"  [(ngModel)]="model.donationamount" required/>
+									<div *ngIf="donationamount.errors && (donationamount.dirty || donationamount.touched)"
+										 class="alert alert-danger">
+									<div [hidden]="!donationamount.errors.required">
+											Required
+									</div>   
+							</div>
+						</div>
+					</div>	
+					
+					<div class="form-group col-lg-8">
+						<label for="fname">PAN of Donee</label>
+						<br/>
+						<p>Use 'GGGGG0000G' as PAN number if you have donated to Government Funds that do not have a PAN.</p>
+						<div class="input_field">
+								<input type="text" class="form-control" id="pandonee" name="pandonee" #pandonee="ngModel"  [(ngModel)]="model.pandonee" required/>
+									<div *ngIf="pandonee.errors && (pandonee.dirty || pandonee.touched)"
+										 class="alert alert-danger">
+									<div [hidden]="!pandonee.errors.required">
+											Required
+									</div>   
+							</div>
+						</div>
+					</div>	
+					
+			<div class="form-group col-lg-8">
+				<label for="gender">Limit On Deduction * </label>
+				<p>For most people, the limit on deduction is Subject to Income. </p>
+				<div class="input_field">
+					<select class="form-control" name="limitdeduction" #limitdeduction="ngModel"  [(ngModel)]="model.limitdeduction" required>
+					<option>Subject To Income</option>
+					<option>No Limit</option>
+				</select>
+				<div *ngIf="limitdeduction.errors && (limitdeduction.dirty || limitdeduction.touched)"
+			             class="alert alert-danger">
+			            <div [hidden]="!limitdeduction.errors.required">
+			              	Required
+			            </div>   
+			     </div>
+			</div>
+		</div>	
+				
+				
+			<div class="form-group col-lg-8">
+				<label for="gender">Qualifying Percentage * </label>
+				<p>For most people, this percentage is 50% </p>
+				<div class="input_field">
+					<select class="form-control" name="qualifypercentage" #qualifypercentage="ngModel"  [(ngModel)]="model.qualifypercentage" required>
+					<option>50%</option>
+					<option>100%</option>
+					</select>
+					<div *ngIf="qualifypercentage.errors && (qualifypercentage.dirty || qualifypercentage.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!qualifypercentage.errors.required">
+				              	Required
+				            </div>   
+				     </div>
+				</div>
+			</div>	
+		
+		</fieldset>	
+
+		<fieldset>
+					<legend>Address of Donee</legend>
+						<div class="form-group col-lg-8">
+							<label for="fname">Pincode *</label>
+									<div class="input_field">
+									<input type="text" class="form-control" id="pincode" name="pincode" #pincode="ngModel"  [(ngModel)]="model.pincode" required>
+									<div *ngIf="pincode.errors && (pincode.dirty || pincode.touched)"
+										class="alert alert-danger">
+									<div [hidden]="!pincode.errors.required">
+										Required
+										</div>   
+								   </div>
+							</div>
+						</div>
+		
+									<div class="form-group col-lg-8">
+										<label for="fname">Address Line *</label>
+											<div class="input_field">
+											<input type="text" class="form-control" id="addressline" name="addressline" #addressline="ngModel"  [(ngModel)]="model.addressline" required>
+											<div *ngIf="addressline.errors && (addressline.dirty || addressline.touched)"
+														class="alert alert-danger">
+											<div [hidden]="!addressline.errors.required">
+											Required
+										</div>   
+									 </div>
+								</div>
+							</div>
+							
+
+
+
+						<div class="form-group col-lg-8">
+								<label for="fname">Town / City *</label>
+									<div class="input_field">
+										<input type="text" class="form-control" id="city" name="city" #city="ngModel"  [(ngModel)]="model.city" required>
+											<div *ngIf="city.errors && (city.dirty || city.touched)"
+														class="alert alert-danger">
+													<div [hidden]="!city.errors.required">
+													Required
+												</div>   
+										  </div>
+									</div>
+								</div>
+				
+
+							<div>			
+								<label class="col-md-8 ">Common 80G Organizations</label>
+										<div class="col-md-6 ">
+											<div class="input-group">
+												<select class="form-control">
+												<option>Andhra Pradesh</option>				
+												<option>Arunachal Pradesh</option>				
+												<option>Assam</option>				
+												<option>Chhattisgarh</option>				
+												<option>Goa</option>				
+												<option>Gujarat</option>				
+												<option>Haryana</option>				
+												<option>Himachal Pradesh</option>				
+												<option>Jammu & Kashmir</option>				
+												<option>Jharkhand</option>				
+												<option>Karnataka</option>				
+												<option>Kerala</option>				
+												<option>Madhya Pradesh</option>				
+												<option>Maharashtra</option>				
+												<option>Manipur</option>				
+												<option>Meghalaya</option>				
+												<option>Mizoram</option>				
+												<option>Nagaland</option>				
+												<option>Orissa</option>				
+												<option>Punjab</option>				
+												<option>Rajasthan</option>				
+												<option>Sikkim  </option>				
+												<option>Tamil Nadu  </option>				
+												<option>Telangana</option>				
+												<option>Tripura </option>				
+												<option>Uttar Pradesh  </option>				
+												<option>Uttarakhand </option>				
+												<option>West Bengal </option>				
+										</select>
+									</div>
+								</div>
+							</div>
+				</fieldset>
+
+				<fieldset>
+						<div class="form-group col-lg-12">
+						  <button type="submit" class="btn btn-primary" [disabled]="!sectionEightyDeductForm.form.valid">Save</button>
+						</div>
+					</fieldset>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+			
+				
+			
+
+	
+	
+				

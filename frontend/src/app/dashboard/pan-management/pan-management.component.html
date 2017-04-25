@@ -1,0 +1,27 @@
+<div class="app app-default">
+<app-dashboard-sidebar></app-dashboard-sidebar>
+	<div class="app-container">
+		<app-dashboard-header></app-dashboard-header>
+		
+		<div class="row pan-number">
+		  	<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" *ngFor="let pan of panData;  let i = index"  [attr.data-index]="i" (click)="panDetails(i)">
+				<a href="javascript:;" class="card card-banner card-green-light" >
+				  <div class="card-body">
+					<i class="icon fa fa-address-card fa-4x"></i>
+					<div class="content">
+					  <div class="title">{{pan.firstname}} {{pan.lastname}}</div>
+					  <div class="value">{{pan.pannumber}}</div>
+					</div>
+				  </div>
+				</a>
+		  	</div>
+		</div>
+		
+		<div class="row pan-number" [hidden]="hideAddButton">
+		  	<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+				<button type="button" class="btn btn-primary" [routerLink]="['/dashboard/pan-management/add-another-pan']">Add Pan</button>
+		  	</div>
+		</div>
+	
+	</div>
+</div>

@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+.list-group > .list-group-item {
+    overflow: hidden;
+}
+
+.accordian .alert-danger {
+    border-radius: 0;
+    padding: 5px 10px;
+    margin-bottom:0px;
+    max-width: 525px;
+}
+
+.accordian .form-group {
+    margin-bottom:15px;
+}
+
+.sub-title {
+	font-size: 13px;
+    color: #a0a0a0;
+}
+
+select.form-control {
+	    margin-bottom: 15px;
+}
+
+.hint {
+	font-size: 12px;
+    margin-bottom: 15px;
+    color: #29c75f;
+}

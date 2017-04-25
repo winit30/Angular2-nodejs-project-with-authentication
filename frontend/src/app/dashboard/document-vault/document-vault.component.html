@@ -1,0 +1,140 @@
+<div class="app app-default">
+	<app-dashboard-sidebar></app-dashboard-sidebar>
+	<div class="app-container">
+		<app-dashboard-header></app-dashboard-header>
+		<div class="row">
+		  <div class="col-md-12">
+		    <div class="card">
+		      <div class="card-header">
+		        <div class="card-title">
+		        	Welcome to your document vault
+		        	<button class="btn btn-primary pull-right" (click)="upload()">Upload document</button>
+		        	<button class="btn btn-primary pull-right" (click)="download()">Download document</button>
+	        	</div>
+		      </div>
+		      <div class="card-body">
+		     	 <div class="hide-show-cont" [hidden]="isUploadActive">
+		     	 	<h6>Now all your documents at one place</h6><br/>
+		     		<form class="form form-horizontal">
+		     			<div class="section">
+		     				<div class="section-body">
+ 					 		  <div class="form-group">
+						        <label class="col-md-3 control-label">Select Financial Year</label>
+						        <div class="col-md-9 ">
+							        <div class="input-group">
+						        	  	<select class="form-control">
+							          		<option>Select Financial Year</option>
+							          		<option>2015-2016</option>
+							          		<option>2016-2017</option>
+						          		</select>
+							        </div>
+						        </div>
+						      </div>
+						         <hr/>
+						       <div class="form-group">
+							        <label class="col-md-3 control-label">Upload your documents</label>
+							        <div class="col-md-9">
+								         <input class="form-control" type="file" value="">
+							        </div>
+						      </div>
+					          <div class="form-group">
+							        <label class="col-md-3 control-label">Document name</label>
+							        <div class="col-md-9">
+								         <input class="form-control" type="text" value="">
+							        </div>
+						      </div>
+						         <hr/>
+						      <div class="form-group">
+							        <div class="col-md-12">
+								         <button class="btn btn-info pull-right">Upload Now</button>
+							        </div>
+						      </div>
+		     				</div>
+	     				</div>
+		     		</form>
+		     	 </div>
+		     	 <div class="hide-show-cont" [hidden]="isDownloadActive">
+		     	 	<h6>Now all your documents at one place</h6><br/>
+		     	 	<form class="form form-horizontal">
+		     			<div class="section">
+		     				<div class="section-body">
+ 					 		  <div class="form-group">
+						        <label class="col-md-3 control-label">Select Financial Year</label>
+						        <div class="col-md-9 ">
+							        <div class="input-group">
+						        	  	<select class="form-control">
+							          		<option>Select Financial Year</option>
+							          		<option>2015-2016</option>
+							          		<option>2016-2017</option>
+						          		</select>
+							        </div>
+						        </div>
+						      </div>
+
+						      <hr/>
+								<h5>My uploaded documents</h5>
+					          	<div>
+								      <div class="checkbox">
+								        <input type="checkbox" id="checkbox1">
+								        <label for="checkbox1">
+								            Form 16
+								        </label>
+								      </div>
+								      <div class="checkbox">
+								        <input type="checkbox" id="checkbox2">
+								        <label for="checkbox2">
+								            Loan Aggrement
+								        </label>
+								      </div>
+								      <div class="checkbox">
+								        <input type="checkbox" id="checkbox3">
+								        <label for="checkbox3">
+								            Address Proof
+								        </label>
+								      </div>
+								      <div class="checkbox">
+								        <input type="checkbox" id="checkbox4">
+								        <label for="checkbox4">
+								           Salary Slips
+								        </label>
+								      </div>
+								</div>
+
+								<h5>Easy ITER filed documents</h5>
+								<div>
+							      <div class="checkbox">
+							        <input type="checkbox" id="checkbox5">
+							        <label for="checkbox5">
+							            ITR-V filed
+							        </label>
+							      </div>
+							      <div class="checkbox">
+							        <input type="checkbox" id="checkbox6">
+							        <label for="checkbox6">
+							            Tax Computation
+							        </label>
+							      </div>
+							      <div class="checkbox">
+							        <input type="checkbox" id="checkbox7">
+							        <label for="checkbox7">
+							            Financial Statement
+							        </label>
+							      </div>
+								</div>
+						    
+					         
+						      <div class="form-group">
+							        <div class="col-md-12">
+								         <button class="btn btn-info pull-right">Download now</button>
+							        </div>
+						      </div>
+		     				</div>
+	     				</div>
+		     		</form>
+		     	 </div>
+		       </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</div>

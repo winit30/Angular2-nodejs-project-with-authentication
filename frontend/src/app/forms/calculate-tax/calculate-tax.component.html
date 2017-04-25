@@ -1,0 +1,136 @@
+<header class="header frontpage notfront">
+	<app-landing-header></app-landing-header>
+</header>
+
+<div class="app-container full-width"  [hidden]="submitted">
+<div class="row">
+	<div class="col-lg-8 col-sm-8">
+		<div class="card personal_info">
+			<div class="card-header">
+				Calculate Tax
+			</div>
+			<div class="card-body">
+				<form class="form form-horizontal" name="form"  novalidate (ngSubmit)="calculate()" #calcTaxForm="ngForm">
+				
+					<div class="section">
+						<div class="section-body">
+                <div class="form-group" >
+                    <label for="life" class="control-label col-md-3">Life Insurance investment</label>
+                    <div class="input_field col-md-9">
+                      <input type="number" class="form-control" name="life" #life="ngModel" [(ngModel)]="model.life" required />
+                        <div *ngIf="life.errors && (life.dirty || life.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!life.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                    </div>
+                </div>
+               
+								<div class="form-group">
+									<label for="fname" class="control-label col-md-3">PF deducted from salary</label>
+									<div class="input_field col-md-9">
+										  <input type="number" class="form-control" name="pf" [(ngModel)]="model.pf" #pf="ngModel" required />
+					                      <div *ngIf="pf.errors && (pf.dirty || pf.touched)"
+									             class="alert alert-danger">
+									            <div [hidden]="!pf.errors.required">
+									              	Required
+									            </div>   
+									        </div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="mname" class="control-label col-md-3">Housing Loan Principal repayment</label>
+									<div class="input_field col-md-9">
+										<input type="number" class="form-control" name="house" #housing="ngModel" [(ngModel)]="model.housing" required />
+                    					<div *ngIf="housing.errors && (housing.dirty || housing.touched)"
+								             class="alert alert-danger">
+								            <div [hidden]="!housing.errors.required">
+								              	Required
+								            </div>   
+								        </div>
+									</div>
+								</div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">Mutual fund</label>
+                  <div class="input_field col-md-9">
+                      <input type="number" class="form-control" name="mutual" #mutual="ngModel" [(ngModel)]="model.mutual" required />
+                      <div *ngIf="mutual.errors && (mutual.dirty || mutual.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!mutual.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">Children Fee</label>
+                  <div class="input_field col-md-9">
+                    <input type="number" class="form-control" name="child" #children="ngModel" [(ngModel)]="model.children" required />
+                    <div *ngIf="children.errors && (children.dirty || children.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!children.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">Fixed Deposit</label>
+                  <div class="input_field col-md-9">
+                    <input type="number" class="form-control" name="fixed" #fd="ngModel" [(ngModel)]="model.fd" required />
+                    <div *ngIf="fd.errors && (fd.dirty || fd.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!fd.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="lname" class="control-label col-md-3">Other Investment</label>
+                  <div class="input_field col-md-9">
+                    <input type="number" class="form-control" name="other" #investment="ngModel" [(ngModel)]="model.investment" required />
+                     <div *ngIf="investment.errors && (investment.dirty || investment.touched)"
+				             class="alert alert-danger">
+				            <div [hidden]="!investment.errors.required">
+				              	Required
+				            </div>   
+				        </div>
+                  </div>
+                </div>
+
+						</div>
+					</div>
+					<div class="form-footer">
+						<div class="form-group">
+						  <div class="col-md-9 col-md-offset-3">
+							<button type="submit" class="btn btn-primary"  [disabled]="!calcTaxForm.form.valid">Calculate</button>
+							<button type="button" class="btn btn-default" [routerLink]="['/']">Cancel</button>
+						  </div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+   <div class="col-lg-4 col-sm-4">
+    <div class="card">
+        <div class="card-header">
+          <div class="card-title">Know More About TAX?</div>
+        </div>
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+
+<app-tax-result [hidden]="!submitted"></app-tax-result>
+

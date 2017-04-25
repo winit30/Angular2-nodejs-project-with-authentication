@@ -1,0 +1,45 @@
+
+<div >
+	<h3>Capital Gain</h3>
+	<div class="inner_tab_cont">
+		<app-shares-debentures [hidden]="shares"></app-shares-debentures>
+		<app-property [hidden]="property"></app-property>
+		<app-other-asset [hidden]="otherAsset"></app-other-asset>
+		<app-mutual-fund [hidden]="mutualFund"></app-mutual-fund>
+		<span [hidden]="backButton">
+			<button class="btn btn-primary" (click)="backToShowFirst()" >BAck</button>
+		</span>
+		<div [hidden]="showFirst">
+			<h4>Capital Gains</h4><br/>
+			<p>Did you sell any asset (shares, property, house, land, building, etc) between the period of April 1, 2015 to March 31, 2016?</p><br/>
+			<hr/>
+			<div class="big-button-cont">
+				<button class="btn btn-primary" (click)="toggleBox()">Click here if you sold any assets +</button>
+				<div class="clearfix"></div>
+				<div class="col-sm-12" [hidden]="toggleMe">
+					<br/>
+					<div class="row">
+				    <div class="list-group">
+				      <a href="#" class="list-group-item">
+				        <span class="pull-right"><button class="btn btn-info"(click)="addShares()">Add</button></span> 
+				        1. Detail of Sale of Shares/Debentures
+				      </a>
+				      <a href="#" class="list-group-item">
+				        <span class="pull-right"><button class="btn btn-info" (click)="addProperty()">Add</button></span> 
+				        2. Detail of Sale of land or building (property)
+				      </a>
+				      <a href="#" class="list-group-item">
+				        <span class="pull-right"><button class="btn btn-info" (click)="addAssets()">Add</button></span> 
+				        3. Detail of Sale of any other asset
+				      </a>
+				      <a href="#" class="list-group-item">
+				        <span class="pull-right"><button class="btn btn-info" (click)="addMutual()">Add</button></span> 
+				        4. Detail of Sale of Mutual Funds
+				      </a>
+				    </div>
+				    </div>
+		  		</div>
+			</div>
+			<br/>
+		</div>
+</div>

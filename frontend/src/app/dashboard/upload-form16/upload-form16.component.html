@@ -1,0 +1,58 @@
+<div class="app app-default">
+	<app-dashboard-sidebar></app-dashboard-sidebar>
+	<div class="app-container">
+		<app-dashboard-header></app-dashboard-header>
+		<div class="row">
+			
+			<div class="col-md-12">
+		    <div class="card">
+		      <div class="card-header">
+		        <div class="card-title">
+		        	Upload your Form-16 PDF.<br/>
+		        	<p class="sub-title">Upload. Review. Edit details as necessary. Submit return.</p>
+		        </div>
+		      </div>
+		      <div class="card-body">
+		          <div class="row">
+		            <div class="col-md-12">
+			              <h5>Choose your Form-16 PDF to upload</h5><br/>
+			              <div class="row">
+				              <div class="col-md-6">
+					              <div class="row">
+					              	<div class="form-group">
+									  <div class="input_field col-md-12">
+										  <input class="form-control" type="file" value="">
+									  </div>
+									</div>
+					              </div>
+				              </div>
+			              	</div>
+			              <p class="sub-title">You can upload a password protected PDF too.</p>
+			              <br/>
+			                <div class="row">
+				              <div class="col-md-6">
+					              <div class="row">
+					              	<div class="form-group">
+									  <label class="control-label col-md-12" for="fname">Date Of Birth</label>
+									  <div class="input_field col-md-12">
+										  <input class="form-control" type="date" value="">
+									  </div>
+									</div>
+					              </div>
+				              </div>
+			              	</div><br/>
+			              	<button class="btn btn-primary">Proceed</button>
+			              	<button class="btn btn-default" [routerLink]="['/dashboard']">Cancel</button>
+		            </div>
+		          </div>
+		        </div>
+		    </div>
+		  </div>
+
+
+
+		</div>
+
+
+	</div>
+</div>		

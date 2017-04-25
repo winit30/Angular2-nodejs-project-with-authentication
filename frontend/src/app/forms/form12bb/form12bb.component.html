@@ -1,0 +1,528 @@
+<header class="header frontpage notfront">
+	<app-landing-header></app-landing-header>
+</header>
+
+<div class="app-container full-width">
+<div class="row">
+	<div class="col-lg-8 col-sm-8">
+		<div class="card personal_info">
+			<div class="card-header">
+				Form12BB
+			</div>
+			<div class="card-body">
+				<form class="form form-horizontal" name="form"  novalidate (ngSubmit)="generatePdf()" #form12bbForm="ngForm">
+            
+           <div class="section">
+            <div class="section-body">
+              <div class="step">
+                <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li role="step" class="active">
+                        <a href="#step1" id="step1-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+                            <div class="icon fa fa-user"></div>
+                            <div class="heading">
+                                
+                            </div>
+                        </a>
+                    </li>
+                    <li role="step">
+                        <a href="#step2" role="tab" id="step2-tab" data-toggle="tab" aria-controls="profile">
+                            <div class="icon fa fa-home"></div>
+                            <div class="heading">
+                               
+                            </div>
+                        </a>
+                    </li>
+                    <li role="step">
+                        <a href="#step3" role="tab" id="step3-tab" data-toggle="tab" aria-controls="profile">
+                            <div class="icon fa fa-plane"></div>
+                            <div class="heading">
+                            
+                            </div>
+                        </a>
+                    </li>
+                    <li role="step">
+                        <a href="#step4" role="tab" id="step4-tab" data-toggle="tab" aria-controls="profile">
+                            <div class="icon fa fa-money "></div>
+                            <div class="heading">
+                        
+                            </div>
+                        </a>
+                    </li>
+                     <li role="step">
+                        <a href="#step5" role="tab" id="step5-tab" data-toggle="tab" aria-controls="profile">
+                            <div class="icon fa fa-dollar "></div>
+                            <div class="heading">
+                      
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="step1">
+                            <div class="section-title">Employee Detail</div>
+                            <div class="form-group" >
+                                <label for="life" class="control-label col-md-3">Financial Year</label>
+                                <div class="input_field col-md-9">
+                                  <select class="form-control" name="financial_year" #financial_year="ngModel" [(ngModel)]="model.financial_year" required>
+                                    <option *ngFor="let date of yearArray">{{date}}</option>
+                                  </select>
+                                 <div *ngIf="financial_year.errors && (financial_year.dirty || financial_year.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!financial_year.errors.required">
+							              	Required
+							            </div>   
+							        </div>
+                                </div>
+                            </div>
+                           
+                            <div class="form-group">
+                              <label for="fname" class="control-label col-md-3">Name</label>
+                              <div class="input_field col-md-9">
+                                  <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="model.name" required />
+                                  <div *ngIf="name.errors && (name.dirty || name.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!name.errors.required">
+							              	Required
+							            </div>   
+							        </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="mname" class="control-label col-md-3">Father Name</label>
+                              <div class="input_field col-md-9">
+                                  <input type="text" class="form-control" name="fname" #fname="ngModel" [(ngModel)]="model.fname" required />
+                                  <div *ngIf="fname.errors && (fname.dirty || fname.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!fname.errors.required">
+							              	Required
+							            </div>   
+							        </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="lname" class="control-label col-md-3">Place</label>
+                              <div class="input_field col-md-9">
+                                  <input type="text" class="form-control" name="place" #place="ngModel" [(ngModel)]="model.place" required />
+                                  <div *ngIf="place.errors && (place.dirty || place.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!place.errors.required">
+							              	Required
+							            </div>   
+							        </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="lname" class="control-label col-md-3">PAN</label>
+                              <div class="input_field col-md-9">
+                                <input type="text" class="form-control" name="pan" #pan="ngModel" [(ngModel)]="model.pan" required maxlength= "10" pattern="[A-Z]{5}\d{4}[A-Z]{1}"/>
+                                <div class="hint">(Case Sensitive)</div>
+                               <div *ngIf="pan.errors && (pan.dirty || pan.touched)"
+                                  class="alert alert-danger">
+                                        <div [hidden]="!pan.errors.required">
+                                          Required
+                                        </div> 
+                                        <div [hidden]="!pan.errors.pattern">
+                                          PAN is Invalid
+                                        </div> 
+                                  
+                                  </div>
+
+                                   
+
+
+
+
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="lname" class="control-label col-md-3">Address</label>
+                              <div class="input_field col-md-9">
+                                <input type="text" class="form-control" name="address" #address="ngModel" [(ngModel)]="model.address" required />
+                                <div *ngIf="address.errors && (address.dirty || address.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!address.errors.required">
+							              	Required
+							            </div>   
+							        </div>
+                              </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="lname" class="control-label col-md-3">Date</label>
+                                <div class="input_field col-md-9">
+                                    <input type="date" class="form-control" name="date" #date="ngModel" [(ngModel)]="model.date" required />
+                                    <div *ngIf="date.errors && (date.dirty || date.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!date.errors.required">
+							              	Required
+							            </div>   
+							        </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="lname" class="control-label col-md-3">Employee ID</label>
+                              <div class="input_field col-md-9">
+                                <input type="text" class="form-control" name="employee_id" #employee_id="ngModel" [(ngModel)]="model.employee_id" required />
+                                <div *ngIf="employee_id.errors && (employee_id.dirty || employee_id.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!employee_id.errors.required">
+							              	Required
+							            </div>   
+							        </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="lname" class="control-label col-md-3">Email  Address</label>
+                              <div class="input_field col-md-9">
+                                 <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="model.email" required   pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                             	<div *ngIf="email.errors && (email.dirty || email.touched)"
+							             class="alert alert-danger">
+						            <div [hidden]="!email.errors.required">
+						              Email is required
+						            </div>   
+						            <div  [hidden]="!email.errors.pattern">
+			                            Email is invalid
+			                        </div>
+						        </div>
+                              </div>
+                            </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="step2">
+                        <div class="section-title">House Rent Allowance(HRA)</div>
+                          <div class="hra_form_fields">
+                              <div class="form-group" >
+                                  <label for="life" class="control-label col-md-3">Rent Paid To The Landlord</label>
+                                  <div class="input_field col-md-9">
+                                      <input type="number" class="form-control" name="hra_amount" #hra_amount="ngModel" [(ngModel)]="model.hra_amount" required placeholder = "Amount" />
+                                    
+                                      <div *ngIf="hra_amount.errors && (hra_amount.dirty || hra_amount.touched)"
+								             class="alert alert-danger">
+								            <div [hidden]="!hra_amount.errors.required">
+								              	Required
+								            </div>   
+							        	</div>
+                                     
+                                      <input type="text" class="form-control" name="proof_rent_paid" #proof_rent_paid="ngModel" [(ngModel)]="model.proof_rent_paid" required  placeholder = Supporting Proof Of Rent Paid />
+                                        <div *ngIf="proof_rent_paid.errors && (proof_rent_paid.dirty || proof_rent_paid.touched)"
+								             class="alert alert-danger">
+								            <div [hidden]="!proof_rent_paid.errors.required">
+								              	Required
+								            </div>   
+							        	</div>
+
+                                  </div>
+                              </div>
+                             
+                              <div class="form-group">
+                                <label for="fname" class="control-label col-md-3">Particulars Of Landlord</label>
+                                <div class="input_field col-md-9">
+                                    <input type="text" class="form-control" name="hra_name" #hra_name="ngModel" [(ngModel)]="model.hra_name" required placeholder = Name_Landlord />
+                                    <div *ngIf="hra_name.errors && (hra_name.dirty || hra_name.touched)"
+								             class="alert alert-danger">
+								            <div [hidden]="!hra_name.errors.required">
+								              	Required
+								            </div>   
+							        	</div>
+                    
+                                    <input type="text" class="form-control" name="hra_pan" #hra_pan="ngModel" [(ngModel)]="model.hra_pan" required placeholder = PAN maxlength= "10" pattern="[A-Z]{5}\d{4}[A-Z]{1}" />
+                                    <div *ngIf="hra_pan.errors && (hra_pan.dirty || hra_pan.touched)"
+								             class="alert alert-danger">
+								            <div [hidden]="!hra_pan.errors.required">
+								              	Required
+								            </div>   
+							        	</div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="mname" class="control-label col-md-3">Address Of Landlord</label>
+                                <div class="input_field col-md-9">
+                                    <input type="text" class="form-control" name="hra_address" #hra_address="ngModel" [(ngModel)]="model.hra_address" required />
+                                    <div *ngIf="hra_address.errors && (hra_address.dirty || hra_address.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!hra_address.errors.required">
+							              	Required
+							            </div>   
+						        	</div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="addhtml_btn">
+                              <i class="icon fa fa-plus" (click)="addRow()"></i>
+                            </div>
+
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="step3">
+                            <div class="section-title">Leave Travel Allowance</div>
+                            <div class="form-group" >
+                                <label for="life" class="control-label col-md-3">Leave Travel Concessions and assistance</label>
+                                <div class="input_field col-md-9">
+                                    <input type="number" class="form-control" name="lta_amount" #lta_amount="ngModel" [(ngModel)]="model.lta_amount" required placeholder = Amount />
+                                    <div *ngIf="lta_amount.errors && (lta_amount.dirty || lta_amount.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!lta_amount.errors.required">
+							              	Required
+							            </div>   
+						        	</div>
+                  
+                                    <input type="text" class="form-control" name="lta_proof" #lta_proof="ngModel" [(ngModel)]="model.lta_proof" required placeholder= Mention proof that will be submitted />
+                                    <div *ngIf="lta_proof.errors && (lta_proof.dirty || lta_proof.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!lta_proof.errors.required">
+							              	Required
+							            </div>   
+						        	</div>
+                                </div>
+                            </div>
+                           
+                            <div class="form-group">
+                              <label for="fname" class="control-label col-md-3">Email  Address</label>
+                              <div class="input_field col-md-9">
+                                  <input type="text" class="form-control" name="lta_email" #lta_email="ngModel" [(ngModel)]="model.lta_email" required placeholder = Email_Address  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+                                  <div *ngIf="lta_email.errors && (lta_email.dirty || lta_email.touched)"
+								             class="alert alert-danger">
+							            <div [hidden]="!lta_email.errors.required">
+							              Email is required
+							            </div>   
+							            <div  [hidden]="!lta_email.errors.pattern">
+				                            Email is invalid
+				                        </div>
+							        </div>
+                              </div>
+                            </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="step4">
+                         <div class="section-title">Deduction Of Interest On Housing Loan </div>
+                         <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Amount</label>
+                                <div class="input_field col-md-9">
+                                    <input type="number" class="form-control" name="dihl_amount_pay2leader" #dihl_amount_pay2leader="ngModel" [(ngModel)]="model.dihl_amount_pay2leader" required  />
+                                    <div *ngIf="dihl_amount_pay2leader.errors && (dihl_amount_pay2leader.dirty || dihl_amount_pay2leader.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!dihl_amount_pay2leader.errors.required">
+							              	Required
+							            </div>   
+						        	</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Proof Of Interest On Housing </label>
+                                <div class="input_field col-md-9">
+                                    <input type="text" class="form-control" name="dihl_proof_house_loan" #dihl_proof_house_loan="ngModel" [(ngModel)]="model.dihl_proof_house_loan" required placeholder= Mention proof that will be submitted />
+                                    <div *ngIf="dihl_proof_house_loan.errors && (dihl_proof_house_loan.dirty || dihl_proof_house_loan.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!dihl_proof_house_loan.errors.required">
+							              	Required
+							            </div>   
+						        	</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Particulars Of Lender</label>
+                                <div class="input_field col-md-9">
+                                    <input type="text" class="form-control" name="dihl_particulars_lender" #dihl_particulars_lender="ngModel" [(ngModel)]="model.dihl_particulars_lender" required />
+                                    <div *ngIf="dihl_particulars_lender.errors && (dihl_particulars_lender.dirty || dihl_particulars_lender.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!dihl_particulars_lender.errors.required">
+							              	Required
+							            </div>   
+						        	</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Types Of Lender</label>
+                                <div class="input_field col-md-9">
+                                    <input type="text" class="form-control" name="dihl_types_lender" #dihl_types_lender="ngModel" [(ngModel)]="model.dihl_types_lender" required />
+                                    <div *ngIf="dihl_types_lender.errors && (dihl_types_lender.dirty || dihl_types_lender.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!dihl_types_lender.errors.required">
+							              	Required
+							            </div>   
+						        	</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Name</label>
+                                <div class="input_field col-md-9">
+                                   <input type="text" class="form-control" name="dihl_name" #dihl_name="ngModel" [(ngModel)]="model.dihl_name" required />  
+                                    <div *ngIf="dihl_name.errors && (dihl_name.dirty || dihl_name.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!dihl_name.errors.required">
+							              	Required
+							            </div>   
+						        	</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Address</label>
+                                <div class="input_field col-md-9">
+                                   <input type="text" class="form-control" name="dihl_address" #dihl_address="ngModel" [(ngModel)]="model.dihl_address" required /> 
+                                    <div *ngIf="dihl_address.errors && (dihl_address.dirty || dihl_address.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!dihl_address.errors.required">
+							              	Required
+							            </div>   
+						        	</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life" class="control-label col-md-3">PAN</label>
+                                <div class="input_field col-md-9">
+                                   <input type="text" class="form-control" name="dihl_pan" #dihl_pan="ngModel" [(ngModel)]="model.dihl_pan" required pattern="[A-Z]{5}\d{4}[A-Z]{1}" /> 
+                                   <div *ngIf="dihl_pan.errors && (dihl_pan.dirty || dihl_pan.touched)"
+							             class="alert alert-danger">
+							            <div [hidden]="!dihl_pan.errors.required">
+							              	Required
+							            </div>   
+						        	</div> 
+                                </div>
+                            </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="step5">
+                        <div class="section-title">Tax Saving Deductions</div>
+                         <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Section 80C - Payments or Investments in Life Insurance, PPF, PF, NSC, Tution Fee etc, </label>
+                                <div class="input_field col-md-9">
+                                      <input type="number" class="form-control" name="tsd_amount_tax_sav" #tsd_amount_tax_sav="ngModel" [(ngModel)]="model.tsd_amount_tax_sav" required placeholder = Amount />
+                                      	<div *ngIf="tsd_amount_tax_sav.errors && (tsd_amount_tax_sav.dirty || tsd_amount_tax_sav.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_amount_tax_sav.errors.required">
+								              	Required
+								            </div>   
+						        		</div>  
+
+                                      <input type="text" class="form-control" name="tsd_descriptions" #tsd_descriptions="ngModel" [(ngModel)]="model.tsd_descriptions" required placeholder = Descriptions />
+                                      <div *ngIf="tsd_descriptions.errors && (tsd_descriptions.dirty || tsd_descriptions.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_descriptions.errors.required">
+								              	Required
+								            </div>   
+						        		</div> 
+
+                                      <input type="text" class="form-control" name="tsd_proof_investments" #tsd_proof_investments="ngModel" [(ngModel)]="model.tsd_proof_investments" required placeholder = Proof Of Investments />
+                                      <div *ngIf="tsd_proof_investments.errors && (tsd_proof_investments.dirty || tsd_proof_investments.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_proof_investments.errors.required">
+								              	Required
+								            </div>   
+						        		</div> 
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Section 80CC - Contribution To Pension Fund </label>
+                                <div class="input_field col-md-9">
+                                    <input type="number" class="form-control" name="tsd_amount_tax_sav_pf" #tsd_amount_tax_sav_pf="ngModel" [(ngModel)]="model.tsd_amount_tax_sav_pf" required placeholder = Amount />
+                                    <div *ngIf="tsd_amount_tax_sav_pf.errors && (tsd_amount_tax_sav_pf.dirty || tsd_amount_tax_sav_pf.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_amount_tax_sav_pf.errors.required">
+								              	Required
+								            </div>   
+						        		</div>  
+                    
+                                    <input type="text" class="form-control" name="tsd_proof_investments_pf" #tsd_proof_investments_pf="ngModel" [(ngModel)]="model.tsd_proof_investments_pf" required placeholder = Proof Of Investments />
+                                    <div *ngIf="tsd_proof_investments_pf.errors && (tsd_proof_investments_pf.dirty || tsd_proof_investments_pf.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_proof_investments_pf.errors.required">
+								              	Required
+								            </div>   
+						        		</div>  
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Section 80CCD - Contribution To National Pension Scheme Of Government </label>
+                                <div class="input_field col-md-9">
+                                    <input type="number" class="form-control" name="tsd_amount_tax_sav_np" #tsd_amount_tax_sav_np="ngModel" [(ngModel)]="model.tsd_amount_tax_sav_np" required placeholder = Amount />
+                                    <div *ngIf="tsd_amount_tax_sav_np.errors && (tsd_amount_tax_sav_np.dirty || tsd_amount_tax_sav_np.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_amount_tax_sav_np.errors.required">
+								              	Required
+								            </div>   
+						        		</div>  
+                    
+                                    <input type="text" class="form-control" name="tsd_proof_investments_np" #tsd_proof_investments_np="ngModel" [(ngModel)]="model.tsd_proof_investments_np" required placeholder = Proof Of Investments /> 
+                                    <div *ngIf="tsd_proof_investments_np.errors && (tsd_proof_investments_np.dirty || tsd_proof_investments_np.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_proof_investments_np.errors.required">
+								              	Required
+								            </div>   
+						        		</div>  
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="life" class="control-label col-md-3">Section 80C, 80CCC, 80CCD </label>
+                                <div class="input_field col-md-9">
+                                    <input type="text" class="form-control" name="tsd_section" #tsd_section="ngModel" [(ngModel)]="model.tsd_section" required placeholder = Section />
+                                    <div *ngIf="tsd_section.errors && (tsd_section.dirty || tsd_section.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_section.errors.required">
+								              	Required
+								            </div>   
+						        		</div>   
+                    
+                                    <input type="number" class="form-control" name="tsd_amount_tax_sav_c" #tsd_amount_tax_sav_c="ngModel" [(ngModel)]="model.tsd_amount_tax_sav_c" required placeholder = Amount />
+                                    <div *ngIf="tsd_amount_tax_sav_c.errors && (tsd_amount_tax_sav_c.dirty || tsd_amount_tax_sav_c.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_amount_tax_sav_c.errors.required">
+								              	Required
+								            </div>   
+						        		</div> 
+                    
+                                    <input type="text" class="form-control" name="tsd_proof_investments_c" #tsd_proof_investments_c="ngModel" [(ngModel)]="model.tsd_proof_investments_c" required placeholder = Proof Of Investments />
+                                    <div *ngIf="tsd_proof_investments_c.errors && (tsd_proof_investments_c.dirty || tsd_proof_investments_c.touched)"
+							             class="alert alert-danger">
+								            <div [hidden]="!tsd_proof_investments_c.errors.required">
+								              	Required
+								            </div>   
+						        		</div> 
+                                </div>
+                            </div>
+
+                              <div class="form-footer">
+                                <div class="form-group">
+                                  <div class="col-md-9 col-md-offset-3">
+                                  <button type="submit" class="btn btn-primary" [disabled]="!form12bbForm.form.valid">Generate PDF</button>
+                                  <button type="button" class="btn btn-default" [routerLink]="['/']">Cancel</button>
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+				</form>
+			</div>
+		</div>
+	</div>
+   <div class="col-lg-4 col-sm-4">
+    <div class="card">
+        <div class="card-header">
+          <div class="card-title">Know More About 12BB?</div>
+        </div>
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+  </div>
+</div>
+</div>

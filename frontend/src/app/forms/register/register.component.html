@@ -1,0 +1,109 @@
+<div class="app app-default">
+
+<div class="app-container app-login">
+  <div class="flex-center">
+    <div class="app-header"></div>
+    <div class="app-body">
+      <div class="loader-container text-center">
+          <div class="icon">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+              </div>
+            </div>
+          <div class="title">Logging in...</div>
+      </div>
+      <div class="app-block">
+        <div class="app-right-section">
+          <div class="app-brand"><span class="highlight">Your</span> Logo</div>
+          <div class="app-info">
+            
+            <ul class="list">
+              <li>
+                <div class="icon">
+                  <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                </div>
+                <div class="title">Increase <b>Productivity</b></div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fa fa-cubes" aria-hidden="true"></i>
+                </div>
+                <div class="title">Lot of <b>Components</b></div>
+              </li>
+              <li>
+                <div class="icon">
+                  <i class="fa fa-usd" aria-hidden="true"></i>
+                </div>
+                <div class="title">Forever <b>Free</b></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="app-form">
+          
+			<div class="form-header login-header">
+			  <h3>Hello User!!!</h3>
+			  <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
+			</div>
+
+			
+          <form novalidate (ngSubmit)="register()"  [formGroup]="myForm"  >
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">
+                  <i class="fa fa-user" aria-hidden="true"></i></span>
+                <input formControlName="username" type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+              </div>
+              <small [hidden]="myForm.controls.username.valid || (myForm.controls.username.pristine && !myForm.submitted)" class="text-danger">
+                  Username is required.
+                </small>
+			  
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">
+                  <i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <input formControlName="email" type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+              </div>
+              <small [hidden]="myForm.controls.email.valid || (myForm.controls.email.pristine && !myForm.submitted)" class="text-danger">
+                      Email is required.
+                </small>
+			  
+	         <div class="input-group" formGroupName="passwords" >
+                <span class="input-group-addon" id="basic-addon3" >
+                  <i class="fa fa-key" aria-hidden="true"></i></span>
+               <input type="password" class="form-control" formControlName="password" id="password" name="password" placeholder="Password" required >
+              </div>
+              <div *ngIf="myForm.controls['passwords'].controls['password'].invalid && !myForm.controls['passwords'].controls['password'].pristine">
+               <small class="text-danger">
+                  Password is required
+                </small>
+              </div>
+
+            <div class="input-group" formGroupName="passwords" >
+                <span class="input-group-addon" id="basic-addon4" >
+                  <i class="fa fa-key" aria-hidden="true"></i></span>
+               <input formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+              </div>
+			       <div *ngIf="(myForm.controls['passwords'].invalid || myForm.controls['passwords'].controls['confirmPassword'].invalid)
+                  && !myForm.controls['passwords'].controls['confirmPassword'].pristine">
+                  <small class="text-danger">
+                    Password mismatch
+                  </small>
+              </div>
+            
+              <div class="text-center">
+                  <input type="submit" class="btn btn-success btn-submit" value="Register" [disabled]="!myForm.valid" >
+              </div>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+    <div class="app-footer">
+    </div>
+  </div>
+</div>
+
+</div>
+  
